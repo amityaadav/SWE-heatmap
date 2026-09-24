@@ -45,4 +45,4 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --set-secrets=OLLAMA_CLOUD_API_KEY=ollama-cloud-api-key:latest \
-            --set-env-vars="NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }},NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }},NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }}"
+            --set-env-vars="NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }},NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }},NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }},OLLAMA_CLOUD_API_URL=${{ secrets.OLLAMA_CLOUD_API_URL }}"
