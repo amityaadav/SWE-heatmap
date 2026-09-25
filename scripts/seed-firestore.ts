@@ -1,10 +1,13 @@
 /**
  * Seeds Firestore with the domain/leaf-topic structure and empty topic_catalog entries.
  *
- * Usage:
- *   npx tsx scripts/seed-firestore.ts
+ * Usage (from project root):
+ *   npm run seed
  *
- * Requires GOOGLE_APPLICATION_CREDENTIALS or FIREBASE_SERVICE_ACCOUNT_KEY env var.
+ * In Cloud Shell, set the project first:
+ *   export GOOGLE_CLOUD_PROJECT=swe-heatmap
+ *   gcloud auth application-default login
+ *   npm run seed
  */
 
 import { initializeApp, cert, type ServiceAccount } from "firebase-admin/app";
@@ -25,16 +28,23 @@ async function seed() {
       `(Section A: ${counts.sectionA}, Section B: ${counts.sectionB})`
   );
 
-  const batch = db.batch();
+  let batch = db.batch();
   let ops = 0;
 
-  // Ensure profile/main exists
+  async function flushIfNeeded() {
+    if (ops >= 490) {
+      console.log(`  Committing batch (${ops} ops)...`);
+      await batch.commit();
+      batch = db.batch();
+      ops = 0;
+    }
+  }
+
   const profileRef = db.doc("profile/main");
   batch.set(profileRef, { created: new Date().toISOString() }, { merge: true });
   ops++;
 
   for (const domain of DOMAINS) {
-    // Create domain document under profile/main
     const domainRef = db.doc(`profile/main/domains/${domain.id}`);
     batch.set(
       domainRef,
@@ -46,9 +56,9 @@ async function seed() {
       { merge: true }
     );
     ops++;
+    await flushIfNeeded();
 
     for (const topic of domain.leaf_topics) {
-      // Create leaf topic under profile (unassessed by default)
       const leafRef = db.doc(
         `profile/main/domains/${domain.id}/leaf_topics/${topic.id}`
       );
@@ -65,8 +75,8 @@ async function seed() {
         { merge: true }
       );
       ops++;
+      await flushIfNeeded();
 
-      // Create topic_catalog entry (resources empty until curated)
       const catalogRef = db.doc(`topic_catalog/${topic.id}`);
       batch.set(
         catalogRef,
@@ -78,13 +88,7 @@ async function seed() {
         { merge: true }
       );
       ops++;
-
-      // Firestore batch limit is 500 operations
-      if (ops >= 490) {
-        console.log(`  Committing batch (${ops} ops)...`);
-        await batch.commit();
-        ops = 0;
-      }
+      await flushIfNeeded();
     }
   }
 
