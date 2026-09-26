@@ -41,7 +41,7 @@ Respond in JSON format only:
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: process.env.OLLAMA_MODEL || "llama3",
+      model: process.env.OLLAMA_MODEL || "deepseek-v4-pro:cloud",
       messages: [{ role: "user", content: rubricPrompt }],
       stream: false,
       format: "json",
