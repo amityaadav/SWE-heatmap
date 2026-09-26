@@ -12,7 +12,7 @@
 
 import { initializeApp, cert, type ServiceAccount } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { DOMAINS, getTopicCount } from "../src/data/domains";
+import { DOMAINS, getTopicCount } from "../src/data/domains.ts";
 
 const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
 const app = serviceAccount
