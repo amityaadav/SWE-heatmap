@@ -31,6 +31,7 @@ export default function Heatmap({ profile }: { profile: Profile }) {
   const [selected, setSelected] = useState<SelectedTopic | null>(null);
   const [activeFilter, setActiveFilter] = useState<number | null>(null);
   const [railOpen, setRailOpen] = useState(false);
+  const [expandedDomains, setExpandedDomains] = useState<Set<string>>(new Set());
 
   const domainEntries = Object.entries(profile.domains);
 
@@ -60,6 +61,18 @@ export default function Heatmap({ profile }: { profile: Profile }) {
 
   const toggleFilter = useCallback((lvl: number) => {
     setActiveFilter((prev) => (prev === lvl ? null : lvl));
+  }, []);
+
+  const toggleDomain = useCallback((domainId: string) => {
+    setExpandedDomains((prev) => {
+      const next = new Set(prev);
+      if (next.has(domainId)) {
+        next.delete(domainId);
+      } else {
+        next.add(domainId);
+      }
+      return next;
+    });
   }, []);
 
   if (domainEntries.length === 0) {
@@ -163,6 +176,8 @@ export default function Heatmap({ profile }: { profile: Profile }) {
             const avg = computeDomainAverage(domain);
             const assessedCount = topics.filter(([, t]) => t.assessed).length;
 
+            const isExpanded = expandedDomains.has(id);
+
             return (
               <div key={id}>
               {showTierHeader && (
@@ -172,8 +187,16 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                   </span>
                 </div>
               )}
-              <section className="border-t border-ink py-4">
-                <div className="mb-3 flex flex-wrap items-baseline gap-[14px]">
+              <section className="border-t border-ink">
+                <button
+                  onClick={() => toggleDomain(id)}
+                  className="flex w-full flex-wrap items-baseline gap-[14px] py-4 text-left transition-colors hover:bg-paper-2"
+                >
+                  <span className="mr-1 inline-block w-[14px] font-mono text-[12px] text-ink-3 transition-transform duration-150"
+                    style={{ transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)" }}
+                  >
+                    ▶
+                  </span>
                   <h2 className="m-0 font-display text-[17px] font-bold tracking-[-0.012em]">
                     {domain.domain_name}
                   </h2>
@@ -181,7 +204,6 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                     {assessedCount}/{topics.length} assessed
                     {avg !== null && ` · avg ${avg.toFixed(1)}`}
                   </p>
-                  {/* Microbar */}
                   <div className="flex h-[9px] w-[132px] flex-shrink-0 overflow-hidden border border-ink">
                     {[5, 4, 3, 2, 1, 0].map((lvl) => {
                       if (!localCounts[lvl]) return null;
@@ -197,49 +219,50 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                       );
                     })}
                   </div>
-                </div>
+                </button>
 
-                {/* Cells */}
-                <div className="grid grid-cols-[repeat(auto-fill,minmax(154px,1fr))] gap-1">
-                  {topics.map(([topicId, topic]) => {
-                    const numeric = topic.assessed
-                      ? levelToNumeric(topic.depth_level)
-                      : 0;
-                    const isFiltered =
-                      activeFilter !== null && numeric !== activeFilter;
-                    const isSelected = selected?.name === topic.topic_name;
+                {isExpanded && (
+                  <div className="grid grid-cols-[repeat(auto-fill,minmax(154px,1fr))] gap-1 pb-4">
+                    {topics.map(([topicId, topic]) => {
+                      const numeric = topic.assessed
+                        ? levelToNumeric(topic.depth_level)
+                        : 0;
+                      const isFiltered =
+                        activeFilter !== null && numeric !== activeFilter;
+                      const isSelected = selected?.name === topic.topic_name;
 
-                    return (
-                      <button
-                        key={topicId}
-                        onClick={() =>
-                          handleCellClick(
-                            topic.topic_name,
-                            topic.assessed ? topic.depth_level : "Unaware",
-                            topic.judge_notes || "",
-                            domain.domain_name,
-                            topic.assessed
-                          )
-                        }
-                        className={`relative block min-h-[56px] border p-[9px_10px_10px] text-left font-mono text-[11.5px] leading-[1.28] tracking-[-0.005em] transition-all duration-150 ${
-                          isFiltered
-                            ? "pointer-events-none opacity-[0.14]"
-                            : "hover:-translate-y-[2px] hover:shadow-[0_4px_0_0_var(--ink)]"
-                        } ${isSelected ? "shadow-[0_0_0_3px_var(--ink)]" : ""}`}
-                        style={{
-                          backgroundColor: `var(--L${numeric})`,
-                          color: `var(--L${numeric}-ink)`,
-                          borderColor: "rgba(15,19,27,0.28)",
-                        }}
-                      >
-                        <span className="absolute right-[7px] top-[6px] text-[9px] font-semibold opacity-55">
-                          {numeric}
-                        </span>
-                        {topic.topic_name}
-                      </button>
-                    );
-                  })}
-                </div>
+                      return (
+                        <button
+                          key={topicId}
+                          onClick={() =>
+                            handleCellClick(
+                              topic.topic_name,
+                              topic.assessed ? topic.depth_level : "Unaware",
+                              topic.judge_notes || "",
+                              domain.domain_name,
+                              topic.assessed
+                            )
+                          }
+                          className={`relative block min-h-[56px] border p-[9px_10px_10px] text-left font-mono text-[11.5px] leading-[1.28] tracking-[-0.005em] transition-all duration-150 ${
+                            isFiltered
+                              ? "pointer-events-none opacity-[0.14]"
+                              : "hover:-translate-y-[2px] hover:shadow-[0_4px_0_0_var(--ink)]"
+                          } ${isSelected ? "shadow-[0_0_0_3px_var(--ink)]" : ""}`}
+                          style={{
+                            backgroundColor: `var(--L${numeric})`,
+                            color: `var(--L${numeric}-ink)`,
+                            borderColor: "rgba(15,19,27,0.28)",
+                          }}
+                        >
+                          <span className="absolute right-[7px] top-[6px] text-[9px] font-semibold opacity-55">
+                            {numeric}
+                          </span>
+                          {topic.topic_name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </section>
               </div>
             );

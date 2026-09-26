@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import type { Auth, User } from "firebase/auth";
 import { DOMAINS, TIER_LABELS, type DomainSeed } from "@/data/domains";
 import type { DepthLevel } from "@/lib/types";
+import { DEPTH_NUMERIC } from "@/lib/types";
 
 type Step = "pick-domain" | "pick-topic" | "loading-question" | "answer" | "submitting" | "result";
 
@@ -11,15 +12,6 @@ interface JudgeResult {
   depth_level: DepthLevel;
   judge_notes: string;
 }
-
-const DEPTH_COLORS: Record<string, string> = {
-  Unaware: "bg-gray-200 text-gray-700",
-  Recognize: "bg-blue-100 text-blue-800",
-  Explain: "bg-blue-200 text-blue-900",
-  Apply: "bg-blue-400 text-white",
-  "Debug under pressure": "bg-blue-600 text-white",
-  Teach: "bg-blue-800 text-white",
-};
 
 export default function AssessPage() {
   const [user, setUser] = useState<User | null>(null);
@@ -143,9 +135,9 @@ export default function AssessPage() {
 
   if (authLoading) {
     return (
-      <div className="flex flex-col items-center py-12">
-        <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-200 border-t-blue-600" />
-        <p className="text-[var(--text-secondary)]">Loading...</p>
+      <div className="flex flex-col items-center py-16">
+        <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
+        <p className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">Loading...</p>
       </div>
     );
   }
@@ -153,19 +145,23 @@ export default function AssessPage() {
   if (!user) {
     return (
       <div>
-        <h1 className="mb-2 text-2xl font-bold">Assessment</h1>
-        <p className="mb-8 text-[var(--text-secondary)]">
+        <h1 className="mb-[14px] font-display text-[clamp(24px,4vw,40px)] font-bold leading-[1.08] tracking-[-0.02em]">
+          Assessment
+        </h1>
+        <p className="mb-8 max-w-[50ch] text-[clamp(14px,1.4vw,16px)] leading-[1.55] text-ink-2">
           Sign in to take an assessment. The LLM judge will evaluate your answers
-          against a software engineering hiring rubric.
+          against a six-level software engineering rubric.
         </p>
         <button
           onClick={handleSignIn}
           disabled={!firebaseAuth}
-          className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+          className="border border-ink bg-ink px-[18px] py-[10px] font-mono text-[11px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2 disabled:opacity-40"
         >
           Sign in with Google
         </button>
-        {error && <p className="mt-4 text-sm text-red-500">{error}</p>}
+        {error && (
+          <p className="mt-4 text-[13px] text-depth-0">{error}</p>
+        )}
       </div>
     );
   }
@@ -175,14 +171,16 @@ export default function AssessPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Assessment</h1>
-        <span className="text-sm text-ink-3">
+        <h1 className="font-display text-[clamp(24px,4vw,40px)] font-bold leading-[1.08] tracking-[-0.02em]">
+          Assessment
+        </h1>
+        <span className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">
           {user.displayName}
         </span>
       </div>
 
       {error && (
-        <div className="mb-4 border border-depth-0 bg-[#fef2f2] p-3 text-sm text-depth-0">
+        <div className="mb-4 border border-depth-0 p-3 text-[13px]" style={{ backgroundColor: "var(--L0)", color: "var(--L0-ink)" }}>
           {error}
         </div>
       )}
@@ -190,7 +188,7 @@ export default function AssessPage() {
       {/* Step 1: Pick domain */}
       {step === "pick-domain" && (
         <div>
-          <p className="mb-6 text-ink-2">
+          <p className="mb-6 text-[15px] leading-[1.55] text-ink-2">
             Choose a domain to assess. Domains are ordered progressively — foundations first.
           </p>
 
@@ -203,15 +201,15 @@ export default function AssessPage() {
                 <h2 className="mb-3 font-mono text-[10.5px] font-semibold uppercase tracking-[.15em] text-ink-3">
                   Tier {tier} — {TIER_LABELS[tier]}
                 </h2>
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-[2px] sm:grid-cols-2 lg:grid-cols-3">
                   {tierDomains.map((domain) => (
                     <button
                       key={domain.id}
                       onClick={() => { setSelectedDomain(domain); setStep("pick-topic"); }}
-                      className="border border-rule bg-paper-2 p-3 text-left transition-colors hover:border-ink hover:bg-white"
+                      className="border border-rule bg-paper-2 p-[12px_14px] text-left transition-all hover:border-ink hover:-translate-y-[1px] hover:shadow-[0_3px_0_0_var(--ink)]"
                     >
-                      <p className="font-display text-sm font-bold">{domain.domain_name}</p>
-                      <p className="mt-1 font-mono text-[11px] text-ink-3">
+                      <p className="font-display text-[14px] font-bold tracking-[-0.01em]">{domain.domain_name}</p>
+                      <p className="mt-1 font-mono text-[10.5px] text-ink-3">
                         {domain.leaf_topics.length} topics · {domain.archetype_tags.join(", ")}
                       </p>
                     </button>
@@ -228,20 +226,20 @@ export default function AssessPage() {
         <div>
           <button
             onClick={handleStartOver}
-            className="mb-4 text-sm text-blue-600 hover:underline"
+            className="mb-4 font-mono text-[11px] uppercase tracking-[.1em] text-ink-3 hover:text-ink"
           >
-            &larr; Back to domains
+            ← Back to domains
           </button>
-          <h2 className="mb-2 text-lg font-semibold">{selectedDomain.domain_name}</h2>
-          <p className="mb-6 text-[var(--text-secondary)]">
-            Pick a leaf topic to assess.
+          <h2 className="mb-2 font-display text-[20px] font-bold tracking-[-0.015em]">{selectedDomain.domain_name}</h2>
+          <p className="mb-6 text-[14px] text-ink-2">
+            Pick a topic to assess.
           </p>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid gap-[2px] sm:grid-cols-2">
             {selectedDomain.leaf_topics.map((topic) => (
               <button
                 key={topic.id}
                 onClick={() => handlePickTopic(topic)}
-                className="rounded-lg border border-[var(--border)] p-3 text-left hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                className="border border-rule bg-paper-2 p-[12px_14px] text-left font-mono text-[12px] leading-[1.35] transition-all hover:border-ink hover:-translate-y-[1px] hover:shadow-[0_3px_0_0_var(--ink)]"
               >
                 {topic.topic_name}
               </button>
@@ -252,10 +250,10 @@ export default function AssessPage() {
 
       {/* Step 3: Loading question */}
       {step === "loading-question" && (
-        <div className="flex flex-col items-center py-12">
-          <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-200 border-t-blue-600" />
-          <p className="text-[var(--text-secondary)]">
-            Generating probe question for <strong>{selectedTopic?.topic_name}</strong>...
+        <div className="flex flex-col items-center py-16">
+          <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
+          <p className="text-[13px] text-ink-2">
+            Generating probe question for <strong className="font-semibold text-ink">{selectedTopic?.topic_name}</strong>...
           </p>
         </div>
       )}
@@ -265,27 +263,27 @@ export default function AssessPage() {
         <div>
           <button
             onClick={() => { setStep("pick-topic"); setQuestion(""); setAnswer(""); }}
-            className="mb-4 text-sm text-blue-600 hover:underline"
+            className="mb-4 font-mono text-[11px] uppercase tracking-[.1em] text-ink-3 hover:text-ink"
           >
-            &larr; Back to topics
+            ← Back to topics
           </button>
-          <div className="mb-2 text-sm font-medium text-[var(--text-secondary)]">
-            {selectedDomain?.domain_name} &rsaquo; {selectedTopic.topic_name}
+          <div className="mb-2 font-mono text-[10.5px] uppercase tracking-[.12em] text-ink-3">
+            {selectedDomain?.domain_name} › {selectedTopic.topic_name}
           </div>
-          <div className="mb-6 rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)] p-4">
-            <p className="font-medium">{question}</p>
+          <div className="mb-6 border border-ink bg-paper-2 p-[16px]">
+            <p className="font-display text-[15px] font-bold leading-[1.4]">{question}</p>
           </div>
           <textarea
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             placeholder="Type your answer here... (2-5 sentences that show your depth of understanding)"
             rows={6}
-            className="mb-4 w-full rounded-lg border border-[var(--border)] bg-[var(--bg-primary)] p-3 text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:border-blue-500 focus:outline-none"
+            className="mb-4 w-full border border-rule bg-paper p-[12px] font-body text-[14px] leading-[1.55] text-ink placeholder:text-ink-3 focus:border-ink focus:outline-none"
           />
           <button
             onClick={handleSubmitAnswer}
             disabled={!answer.trim()}
-            className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+            className="border border-ink bg-ink px-[18px] py-[10px] font-mono text-[11px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2 disabled:opacity-40"
           >
             Submit for Evaluation
           </button>
@@ -294,10 +292,10 @@ export default function AssessPage() {
 
       {/* Step 5: Submitting */}
       {step === "submitting" && (
-        <div className="flex flex-col items-center py-12">
-          <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-200 border-t-blue-600" />
-          <p className="text-[var(--text-secondary)]">
-            Evaluating your answer on <strong>{selectedTopic?.topic_name}</strong>...
+        <div className="flex flex-col items-center py-16">
+          <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
+          <p className="text-[13px] text-ink-2">
+            Evaluating your answer on <strong className="font-semibold text-ink">{selectedTopic?.topic_name}</strong>...
           </p>
         </div>
       )}
@@ -305,43 +303,47 @@ export default function AssessPage() {
       {/* Step 6: Result */}
       {step === "result" && result && selectedTopic && (
         <div>
-          <div className="mb-2 text-sm font-medium text-[var(--text-secondary)]">
-            {selectedDomain?.domain_name} &rsaquo; {selectedTopic.topic_name}
+          <div className="mb-3 font-mono text-[10.5px] uppercase tracking-[.12em] text-ink-3">
+            {selectedDomain?.domain_name} › {selectedTopic.topic_name}
           </div>
 
-          <div className="mb-6 rounded-lg border border-[var(--border)] p-6">
-            <div className="mb-4 flex items-center gap-3">
-              <span className={`rounded-full px-4 py-1.5 text-sm font-semibold ${DEPTH_COLORS[result.depth_level] || "bg-gray-200"}`}>
-                {result.depth_level}
+          <div className="mb-6 border border-ink p-[20px]">
+            <div className="mb-4 inline-flex items-center gap-[7px] border border-ink px-[10px] py-[5px] font-mono text-[11px] uppercase tracking-[.1em]">
+              <span
+                className="block h-[12px] w-[12px]"
+                style={{ backgroundColor: `var(--L${DEPTH_NUMERIC[result.depth_level]})` }}
+              />
+              <span style={{ color: `var(--L${DEPTH_NUMERIC[result.depth_level]}-ink)` }}>
+                {DEPTH_NUMERIC[result.depth_level]} · {result.depth_level}
               </span>
             </div>
 
-            <div className="mb-4">
-              <h3 className="mb-1 text-sm font-semibold text-[var(--text-secondary)]">Question</h3>
-              <p>{question}</p>
+            <div className="mb-4 border-t border-rule pt-3">
+              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">Question</h3>
+              <p className="text-[14px] leading-[1.55]">{question}</p>
             </div>
 
-            <div className="mb-4">
-              <h3 className="mb-1 text-sm font-semibold text-[var(--text-secondary)]">Your answer</h3>
-              <p className="text-[var(--text-secondary)]">{answer}</p>
+            <div className="mb-4 border-t border-rule pt-3">
+              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">Your answer</h3>
+              <p className="text-[14px] leading-[1.55] text-ink-2">{answer}</p>
             </div>
 
-            <div>
-              <h3 className="mb-1 text-sm font-semibold text-[var(--text-secondary)]">Judge notes</h3>
-              <p>{result.judge_notes}</p>
+            <div className="border-t border-rule pt-3">
+              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">Judge notes</h3>
+              <p className="text-[14px] leading-[1.55]">{result.judge_notes}</p>
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-[8px]">
             <button
               onClick={handleAssessAnother}
-              className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
+              className="border border-ink bg-ink px-[14px] py-[8px] font-mono text-[10px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2"
             >
-              Assess another topic in this domain
+              Assess another topic
             </button>
             <button
               onClick={handleStartOver}
-              className="rounded-md border border-[var(--border)] px-6 py-3 font-medium hover:bg-[var(--bg-secondary)]"
+              className="border border-ink bg-paper px-[14px] py-[8px] font-mono text-[10px] uppercase tracking-[.1em] text-ink transition-colors hover:bg-paper-2"
             >
               Pick a different domain
             </button>
