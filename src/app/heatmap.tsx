@@ -150,6 +150,7 @@ export default function Heatmap({ profile }: { profile: Profile }) {
             const currentTier = domain.tier ?? 0;
             const prevTier = idx > 0 ? (domainEntries[idx - 1][1].tier ?? 0) : -1;
             const showTierHeader = currentTier !== prevTier;
+
             const topics = Object.entries(domain.leaf_topics);
             const localCounts: Record<number, number> = {
               0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0,
