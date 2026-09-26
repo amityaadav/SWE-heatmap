@@ -1,5 +1,6 @@
 import { adminDb } from "@/lib/firebase-admin";
 import type { Profile, Domain, LeafTopic } from "@/lib/types";
+import { getResourcesForTopic } from "@/data/resources";
 import Heatmap from "./heatmap";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +23,9 @@ async function getProfile(): Promise<Profile> {
 
       const leafTopics: Record<string, LeafTopic> = {};
       for (const leafDoc of leafSnap.docs) {
-        leafTopics[leafDoc.id] = leafDoc.data() as LeafTopic;
+        const topic = leafDoc.data() as LeafTopic;
+        topic.resources = getResourcesForTopic(leafDoc.id);
+        leafTopics[leafDoc.id] = topic;
       }
 
       domains[domainDoc.id] = {

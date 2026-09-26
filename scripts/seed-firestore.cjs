@@ -13,6 +13,7 @@
 const { initializeApp, cert } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
 const DOMAINS = require("../src/data/domains.json");
+const RESOURCES = require("../src/data/resources.json");
 
 const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
 const app = serviceAccount
@@ -85,7 +86,7 @@ async function seed() {
         {
           topic_name: topic.topic_name,
           domain_id: domain.id,
-          resources: [],
+          resources: RESOURCES[topic.id] || [],
         },
         { merge: true }
       );

@@ -47,7 +47,9 @@ Interactive self-assessment tool for software engineering skills. LLM-judged eva
 - `src/lib/ollama.ts` — Ollama Cloud API judge call
 - `src/data/domains.json` — source of truth for all 25 domains and 153 leaf topics (ordered by tier/complexity)
 - `src/data/domains.ts` — typed wrapper around domains.json
-- `scripts/seed-firestore.cjs` — plain CJS seed script for Firestore (Node v24 compatible)
+- `src/data/resources.json` — source of truth for curated learning resources (2 per leaf topic, keyed by topic id)
+- `src/data/resources.ts` — typed wrapper exposing `getResourcesForTopic(id)`
+- `scripts/seed-firestore.cjs` — plain CJS seed script for Firestore (Node v24 compatible); populates `topic_catalog` resources from `resources.json`
 
 ## Environment variables
 ### Build-time (Docker build args via GitHub Actions)

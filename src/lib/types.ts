@@ -37,6 +37,7 @@ export interface LeafTopic {
   judge_notes: string;
   assessed: boolean;
   assessment_history: AssessmentHistoryEntry[];
+  resources?: Resource[];
 }
 
 export interface Domain {
