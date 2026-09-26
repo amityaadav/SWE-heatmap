@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "seed": "node --no-warnings scripts/seed-firestore.ts"
+    "seed": "node scripts/seed-firestore.cjs"
   },
   "dependencies": {
     "firebase": "^10.14.1",
