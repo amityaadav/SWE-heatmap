@@ -19,6 +19,8 @@ function levelToNumeric(level: DepthLevel): number {
 }
 
 interface SelectedTopic {
+  topicId: string;
+  domainId: string;
   name: string;
   level: DepthLevel;
   numeric: number;
@@ -45,8 +47,8 @@ export default function Heatmap({ profile }: { profile: Profile }) {
   });
 
   const handleCellClick = useCallback(
-    (name: string, level: DepthLevel, notes: string, domain: string, assessed: boolean) => {
-      setSelected({ name, level, numeric: levelToNumeric(level), notes, domain, assessed });
+    (topicId: string, domainId: string, name: string, level: DepthLevel, notes: string, domain: string, assessed: boolean) => {
+      setSelected({ topicId, domainId, name, level, numeric: levelToNumeric(level), notes, domain, assessed });
       setRailOpen(true);
     },
     []
@@ -211,6 +213,8 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                         key={topicId}
                         onClick={() =>
                           handleCellClick(
+                            topicId,
+                            id,
                             topic.topic_name,
                             topic.assessed ? topic.depth_level : "Unaware",
                             topic.judge_notes || "",
@@ -293,7 +297,7 @@ export default function Heatmap({ profile }: { profile: Profile }) {
               </p>
 
               <a
-                href="/assess"
+                href={`/assess?domain=${encodeURIComponent(selected.domainId)}&topic=${encodeURIComponent(selected.topicId)}`}
                 className="mt-[14px] inline-block border border-ink bg-ink px-[14px] py-[6px] font-mono text-[10px] uppercase tracking-[.1em] text-paper no-underline transition-colors hover:bg-ink-2"
               >
                 Assess this topic
