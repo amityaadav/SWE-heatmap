@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Auth, User } from "firebase/auth";
 import { DOMAINS, TIER_LABELS, type DomainSeed } from "@/data/domains";
 import type { DepthLevel } from "@/lib/types";
@@ -14,6 +15,20 @@ interface JudgeResult {
 }
 
 export default function AssessPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col items-center py-16">
+        <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
+        <p className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">Loading...</p>
+      </div>
+    }>
+      <AssessPageInner />
+    </Suspense>
+  );
+}
+
+function AssessPageInner() {
+  const searchParams = useSearchParams();
   const [user, setUser] = useState<User | null>(null);
   const [firebaseAuth, setFirebaseAuth] = useState<Auth | null>(null);
   const [step, setStep] = useState<Step>("pick-domain");
@@ -25,6 +40,7 @@ export default function AssessPage() {
   const [error, setError] = useState("");
 
   const [authLoading, setAuthLoading] = useState(true);
+  const deepLinkHandled = useRef(false);
 
   useEffect(() => {
     import("@/lib/firebase-client").then(async (mod) => {
@@ -36,6 +52,22 @@ export default function AssessPage() {
       });
     });
   }, []);
+
+  useEffect(() => {
+    if (deepLinkHandled.current || !user || authLoading) return;
+    const domainId = searchParams.get("domain");
+    const topicId = searchParams.get("topic");
+    if (!domainId || !topicId) return;
+
+    const domain = DOMAINS.find((d) => d.id === domainId);
+    if (!domain) return;
+    const topic = domain.leaf_topics.find((t) => t.id === topicId);
+    if (!topic) return;
+
+    deepLinkHandled.current = true;
+    setSelectedDomain(domain);
+    handlePickTopic(topic);
+  }, [user, authLoading, searchParams]);
 
   async function handleSignIn() {
     if (!firebaseAuth) return;
