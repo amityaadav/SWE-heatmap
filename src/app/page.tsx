@@ -42,12 +42,17 @@ export default async function Dashboard() {
   const profile = await getProfile();
 
   return (
-    <div>
-      <h1 className="mb-2 text-2xl font-bold">Software Engineering Knowledge Heatmap</h1>
-      <p className="mb-8 text-[var(--text-secondary)]">
-        Public dashboard — click any domain to see individual topic scores.
+    <>
+      <h1 className="mb-[14px] max-w-[19ch] font-display text-[clamp(30px,5.2vw,58px)] font-bold leading-[1.02] tracking-[-0.028em]">
+        What you know about software engineering, and{" "}
+        <em className="not-italic text-depth-0">where the map goes dark</em>.
+      </h1>
+      <p className="mb-4 max-w-[60ch] text-[clamp(15px,1.5vw,17px)] text-ink-2">
+        Every topic scored against evidence from LLM-judged assessments.
+        Click any cell for the reasoning behind its score.
+        Click a legend swatch to isolate one band.
       </p>
       <Heatmap profile={profile} />
-    </div>
+    </>
   );
 }

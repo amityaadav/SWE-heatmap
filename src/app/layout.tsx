@@ -14,28 +14,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen">
-        <header className="border-b border-[var(--border)] px-4 py-3">
-          <nav className="mx-auto flex max-w-6xl items-center justify-between">
-            <a href="/" className="text-lg font-semibold">
+        <div className="mx-auto max-w-[1560px] px-[clamp(16px,4vw,56px)] pt-[clamp(20px,4vw,56px)] pb-20">
+          <nav className="mb-5 flex flex-wrap items-center gap-x-[18px] gap-y-[6px] border-b border-ink pb-[10px] font-mono text-[11px] uppercase tracking-[.16em] text-ink-3">
+            <a href="/" className="hover:text-ink">
               SWE Heatmap
             </a>
-            <div className="flex items-center gap-4">
-              <a
-                href="/"
-                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-              >
-                Dashboard
-              </a>
-              <a
-                href="/assess"
-                className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
-              >
-                Take Assessment
-              </a>
-            </div>
+            <span className="text-rule">|</span>
+            <a href="/" className="hover:text-ink">
+              Dashboard
+            </a>
+            <a href="/assess" className="hover:text-ink">
+              Take Assessment
+            </a>
           </nav>
-        </header>
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+          {children}
+        </div>
       </body>
     </html>
   );
