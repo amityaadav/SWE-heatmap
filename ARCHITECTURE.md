@@ -152,9 +152,10 @@ true` leaf topics in a domain) — never stored, to avoid staleness.
 - Confirm whether the dashboard reads Firestore directly from the client
   (simpler, needs public Firestore security rules scoped to read-only) or
   via a Cloud Run read endpoint (more control, slightly more to build).
-- `topic_catalog` seed data (16 domains × leaf topics × 6 resources each)
-  needs to be populated before the resource-display feature is usable —
-  this is a manual, one-time content task, not a code task.
+- `topic_catalog` resources are now seeded from `src/data/resources.json`
+  (2 curated resources per leaf topic) and merged into the dashboard server-
+  side via `getResourcesForTopic(id)` in `page.tsx`. Re-run `npm run seed`
+  after changing `resources.json` to push updates into Firestore.
 - Firestore security rules need to explicitly block public writes to
   `profile/main` and `topic_catalog` — only the authenticated Cloud Run
   backend (via a service account) should write to either.

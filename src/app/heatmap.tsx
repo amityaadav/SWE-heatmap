@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { DEPTH_NUMERIC, computeDomainAverage } from "@/lib/types";
-import type { Profile, DepthLevel } from "@/lib/types";
+import type { Profile, DepthLevel, Resource } from "@/lib/types";
 import { TIER_LABELS } from "@/data/domains";
 
 const LEVELS: { key: number; level: DepthLevel; desc: string }[] = [
@@ -27,6 +27,7 @@ interface SelectedTopic {
   notes: string;
   domain: string;
   assessed: boolean;
+  resources: Resource[];
 }
 
 export default function Heatmap({ profile }: { profile: Profile }) {
@@ -47,8 +48,8 @@ export default function Heatmap({ profile }: { profile: Profile }) {
   });
 
   const handleCellClick = useCallback(
-    (topicId: string, domainId: string, name: string, level: DepthLevel, notes: string, domain: string, assessed: boolean) => {
-      setSelected({ topicId, domainId, name, level, numeric: levelToNumeric(level), notes, domain, assessed });
+    (topicId: string, domainId: string, name: string, level: DepthLevel, notes: string, domain: string, assessed: boolean, resources: Resource[]) => {
+      setSelected({ topicId, domainId, name, level, numeric: levelToNumeric(level), notes, domain, assessed, resources });
       setRailOpen(true);
     },
     []
@@ -219,7 +220,8 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                             topic.assessed ? topic.depth_level : "Unaware",
                             topic.judge_notes || "",
                             domain.domain_name,
-                            topic.assessed
+                            topic.assessed,
+                            topic.resources || []
                           )
                         }
                         className={`relative block min-h-[56px] border p-[9px_10px_10px] text-left font-mono text-[11.5px] leading-[1.28] tracking-[-0.005em] transition-all duration-150 ${
@@ -295,6 +297,28 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                 <span className="font-semibold text-ink-2">Domain</span> —{" "}
                 {selected.domain}
               </p>
+
+              {selected.resources && selected.resources.length > 0 && (
+                <div className="mt-[14px] border-t border-rule pt-[11px]">
+                  <div className="mb-[8px] font-mono text-[10px] uppercase tracking-[.16em] text-ink-3">
+                    Learn more
+                  </div>
+                  {selected.resources.map((r) => (
+                    <a
+                      key={r.url}
+                      href={r.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block border-b border-rule py-[6px] text-[13px] leading-[1.35] text-ink no-underline transition-colors hover:text-depth-4 last:border-b-0"
+                    >
+                      {r.title}
+                      <span className="mt-[2px] block font-mono text-[10px] tracking-[.05em] text-ink-3">
+                        {r.source} ↗
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              )}
 
               <a
                 href={`/assess?domain=${encodeURIComponent(selected.domainId)}&topic=${encodeURIComponent(selected.topicId)}`}

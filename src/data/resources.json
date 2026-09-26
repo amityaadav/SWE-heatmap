@@ -1,0 +1,2450 @@
+{
+  "control-flow-recursion": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "MDN \u2014 Control flow and error handling",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+      "source": "MDN"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Recursion explained with examples",
+      "url": "https://www.freecodecamp.org/news/recursion-in-programming/",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "state-immutability": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Immutability and its costs",
+      "url": "https://www.infoq.com/articles/immutability-costs/",
+      "source": "InfoQ"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Redux \u2014 Immutable Update Patterns",
+      "url": "https://redux.js.org/usage/structuring-reducers/immutable-update-patterns",
+      "source": "Redux"
+    }
+  ],
+  "pure-functions-side-effects": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Mostly Adequate Guide \u2014 Pure functions",
+      "url": "https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch03",
+      "source": "Mostly Adequate Guide"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Pure functions in JavaScript (MDN)",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/Pure_function",
+      "source": "MDN"
+    }
+  ],
+  "pass-by-value-reference": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Is Java pass-by-value or pass-by-reference?",
+      "url": "https://www.baeldung.com/java-pass-by-value-or-pass-by-reference",
+      "source": "Baeldung"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Evaluation strategy (call by value vs reference)",
+      "url": "https://en.wikipedia.org/wiki/Evaluation_strategy",
+      "source": "Wikipedia"
+    }
+  ],
+  "encoding-basics": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The Absolute Minimum Every Software Developer Must Know About Unicode",
+      "url": "https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/",
+      "source": "Joel on Software"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "What every developer should know about character encoding",
+      "url": "https://www.mattk.co.uk/blog/2020/03/character-encoding/",
+      "source": "Matt K"
+    }
+  ],
+  "floating-point-precision": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "What Every Computer Scientist Should Know About Floating-Point Arithmetic",
+      "url": "https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html",
+      "source": "Oracle / Goldberg"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Floating point math is broken",
+      "url": "https://0.30000000000000004.com/",
+      "source": "0.30000000000000004.com"
+    }
+  ],
+  "time-timezone-handling": [
+    {
+      "rank": 1,
+      "type": "video",
+      "title": "The Problem with Time & Timezones \u2014 Computerphile",
+      "url": "https://www.youtube.com/watch?v=-5wpm-gesOY",
+      "source": "Computerphile"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Falsehoods programmers believe about time",
+      "url": "https://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time",
+      "source": "infiniteundo"
+    }
+  ],
+  "regular-expressions": [
+    {
+      "rank": 1,
+      "type": "tool",
+      "title": "Regex101 \u2014 interactive regex tester",
+      "url": "https://regex101.com/",
+      "source": "regex101"
+    },
+    {
+      "rank": 2,
+      "type": "tool",
+      "title": "regexr \u2014 learn, build, test regex",
+      "url": "https://regexr.com/",
+      "source": "regexr"
+    }
+  ],
+  "arrays-lists-hashmaps-sets": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Big-O cheatsheet \u2014 data structure operations",
+      "url": "https://www.bigocheatsheet.com/",
+      "source": "Big-O Cheat Sheet"
+    },
+    {
+      "rank": 2,
+      "type": "course",
+      "title": "Algorithms, Part I (Princeton) \u2014 stacks, queues, unions",
+      "url": "https://www.coursera.org/learn/algorithms-part1",
+      "source": "Princeton / Coursera"
+    }
+  ],
+  "trees-graphs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "VisuAlgo \u2014 tree and graph visualizations",
+      "url": "https://visualgo.net/en",
+      "source": "VisuAlgo"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "A Gentle Introduction to Graph Theory",
+      "url": "https://www.freecodecamp.org/news/a-gentle-introduction-to-graph-theory/",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "queues-stacks": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "GeeksforGeeks \u2014 Stack and Queue data structures",
+      "url": "https://www.geeksforgeeks.org/stack-data-structure/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Data Structures: Stacks and Queues",
+      "url": "https://www.youtube.com/watch?v=wjI1WNcIntg",
+      "source": "HackerRank"
+    }
+  ],
+  "big-o-in-practice": [
+    {
+      "rank": 1,
+      "type": "video",
+      "title": "Big O Notation \u2014 freeCodeCamp full course",
+      "url": "https://www.youtube.com/watch?v=Mo4vesaut8g",
+      "source": "freeCodeCamp"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "A Gentle Introduction to Big-O",
+      "url": "https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "sorting-searching": [
+    {
+      "rank": 1,
+      "type": "video",
+      "title": "Visualizing sorting algorithms",
+      "url": "https://www.youtube.com/watch?v=kPRA0W1kECg",
+      "source": "Timo Bingmann"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Sorting Algorithms Animations (Toptal)",
+      "url": "https://www.toptal.com/developers/sorting-algorithms",
+      "source": "Toptal"
+    }
+  ],
+  "space-time-tradeoffs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Space\u2013time tradeoff",
+      "url": "https://en.wikipedia.org/wiki/Space%E2%80%93time_tradeoff",
+      "source": "Wikipedia"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Memoization and tabulation (DP)",
+      "url": "https://www.freecodecamp.org/news/memoization-and-tabulation-explained/",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "ds-choice-is-the-bug": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The right data structure for the job",
+      "url": "https://www.interviewcake.com/data-structures-reference",
+      "source": "Interview Cake"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Choosing data structures by access pattern",
+      "url": "https://www.geeksforgeeks.org/data-structures/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "syntax-and-idioms": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "The Python Tutorial",
+      "url": "https://docs.python.org/3/tutorial/",
+      "source": "Python.org"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Idiomatic Python",
+      "url": "https://www.techbeamers.com/python-best-practices/",
+      "source": "TechBeamers"
+    }
+  ],
+  "mutability-and-references": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Facts and myths about Python names and values",
+      "url": "https://nedbatchelder.com/text/names.html",
+      "source": "Ned Batchelder"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Python mutable vs immutable objects",
+      "url": "https://realpython.com/python-mutable-vs-immutable-types/",
+      "source": "Real Python"
+    }
+  ],
+  "functions-closures-decorators": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Python closures and decorators",
+      "url": "https://realpython.com/inner-functions-what-are-they-good-for/",
+      "source": "Real Python"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Primer on Python Decorators",
+      "url": "https://realpython.com/primer-on-python-decorators/",
+      "source": "Real Python"
+    }
+  ],
+  "iterators-generators": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Iterators and generators in Python",
+      "url": "https://realpython.com/python-iterators-iterables/",
+      "source": "Real Python"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Generator tricks for systems programmers",
+      "url": "https://www.dabeaz.com/generators/",
+      "source": "David Beazley"
+    }
+  ],
+  "exceptions-error-handling": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Python \u2014 Errors and Exceptions",
+      "url": "https://docs.python.org/3/tutorial/errors.html",
+      "source": "Python.org"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Python exceptions: an introduction",
+      "url": "https://realpython.com/python-exceptions/",
+      "source": "Real Python"
+    }
+  ],
+  "classes-composition-inheritance": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Inheritance and Composition: A Python OOP Guide",
+      "url": "https://realpython.com/inheritance-composition-python/",
+      "source": "Real Python"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Composition over inheritance",
+      "url": "https://en.wikipedia.org/wiki/Composition_over_inheritance",
+      "source": "Wikipedia"
+    }
+  ],
+  "type-systems-hints": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Python \u2014 typing module documentation",
+      "url": "https://docs.python.org/3/library/typing.html",
+      "source": "Python.org"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Python type checking (mypy guide)",
+      "url": "https://mypy.readthedocs.io/en/stable/getting_started.html",
+      "source": "mypy"
+    }
+  ],
+  "modules-packages-deps": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Python \u2014 Modules and Packages",
+      "url": "https://docs.python.org/3/tutorial/modules.html",
+      "source": "Python.org"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Python Packaging User Guide",
+      "url": "https://packaging.python.org/en/latest/",
+      "source": "PyPA"
+    }
+  ],
+  "concurrency-model": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Speed Up Your Python Program With Concurrency",
+      "url": "https://realpython.com/python-concurrency/",
+      "source": "Real Python"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Understanding the Python GIL",
+      "url": "https://www.youtube.com/watch?v=Obt-vMVdM8s",
+      "source": "David Beazley"
+    }
+  ],
+  "memory-gc": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Python memory management and garbage collection",
+      "url": "https://realpython.com/python-memory-management/",
+      "source": "Real Python"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Garbage collection in Python",
+      "url": "https://rushter.com/blog/python-garbage-collector/",
+      "source": "Rushter"
+    }
+  ],
+  "stdlib-fluency": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Python Standard Library",
+      "url": "https://docs.python.org/3/library/index.html",
+      "source": "Python.org"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Python Standard Library modules worth knowing",
+      "url": "https://realpython.com/python-standard-library/",
+      "source": "Real Python"
+    }
+  ],
+  "git-model": [
+    {
+      "rank": 1,
+      "type": "book",
+      "title": "Pro Git (free book)",
+      "url": "https://git-scm.com/book/en/v2",
+      "source": "git-scm"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Git internals \u2014 plumbing and porcelain",
+      "url": "https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain",
+      "source": "git-scm"
+    }
+  ],
+  "branching-strategies": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Git branching strategies (Atlassian)",
+      "url": "https://www.atlassian.com/git/tutorials/comparing-workflows",
+      "source": "Atlassian"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "A successful Git branching model (git-flow)",
+      "url": "https://nvie.com/posts/a-successful-git-branching-model/",
+      "source": "nvie"
+    }
+  ],
+  "merge-vs-rebase": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Merging vs. Rebasing (Atlassian)",
+      "url": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing",
+      "source": "Atlassian"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Git rebase explained",
+      "url": "https://www.freecodecamp.org/news/git-rebase-explained/",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "conflict-resolution": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Resolving merge conflicts (Atlassian)",
+      "url": "https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts",
+      "source": "Atlassian"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Git \u2014 Advanced merging (conflicts)",
+      "url": "https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging",
+      "source": "git-scm"
+    }
+  ],
+  "reading-writing-diffs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "How to read a diff",
+      "url": "https://dev.to/this-is-learning/how-to-read-a-diff-4g3o",
+      "source": "DEV"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Reading a unified diff",
+      "url": "https://www.gnu.org/software/diffutils/manual/html_node/Detailed-Unified.html",
+      "source": "GNU"
+    }
+  ],
+  "pr-etiquette-code-review": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "How to write the perfect pull request",
+      "url": "https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/",
+      "source": "GitHub Blog"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Google's code review developer guide",
+      "url": "https://google.github.io/eng-practices/review/",
+      "source": "Google eng-practices"
+    }
+  ],
+  "commit-hygiene-history": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "How to Write a Git Commit Message",
+      "url": "https://cbea.ms/git-commit/",
+      "source": "cbea.ms"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Conventional Commits specification",
+      "url": "https://www.conventionalcommits.org/",
+      "source": "conventionalcommits.org"
+    }
+  ],
+  "monorepo-vs-polyrepo": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Monorepo vs polyrepo",
+      "url": "https://monorepo.tools/",
+      "source": "monorepo.tools"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Why Google stores billions of lines of code in a single repository",
+      "url": "https://dl.acm.org/doi/10.1145/2854146",
+      "source": "ACM"
+    }
+  ],
+  "test-types": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The Practical Test Pyramid",
+      "url": "https://martinfowler.com/articles/practical-test-pyramid.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Test doubles \u2014 Mocks aren't stubs",
+      "url": "https://martinfowler.com/articles/mocksArentStubs.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "test-pyramid": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The Practical Test Pyramid",
+      "url": "https://martinfowler.com/articles/practical-test-pyramid.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "TestPyramid",
+      "url": "https://martinfowler.com/bliki/TestPyramid.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "fixtures-mocks-stubs-fakes": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Mocks Aren't Stubs",
+      "url": "https://martinfowler.com/articles/mocksArentStubs.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "TestDouble",
+      "url": "https://martinfowler.com/bliki/TestDouble.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "deterministic-vs-flaky": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Eradicating non-determinism in tests",
+      "url": "https://martinfowler.com/articles/nonDeterminism.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Google \u2014 Flaky tests",
+      "url": "https://google.github.io/eng-practices/review/developer/flaky-tests.html",
+      "source": "Google eng-practices"
+    }
+  ],
+  "tdd-as-practice": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Test Driven Development",
+      "url": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "book",
+      "title": "TDD by Example (Kent Beck)",
+      "url": "https://www.oreilly.com/library/view/test-driven-development/0321146530/",
+      "source": "O'Reilly"
+    }
+  ],
+  "coverage-vanity-metric": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "TestCoverage",
+      "url": "https://martinfowler.com/bliki/TestCoverage.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "How much code coverage is enough?",
+      "url": "https://www.atlassian.com/continuous-delivery/software-testing/code-coverage",
+      "source": "Atlassian"
+    }
+  ],
+  "property-snapshot-testing": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Property-based testing (Hypothesis)",
+      "url": "https://hypothesis.readthedocs.io/en/latest/",
+      "source": "Hypothesis"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Snapshot testing with Jest",
+      "url": "https://jestjs.io/docs/snapshot-testing",
+      "source": "Jest"
+    }
+  ],
+  "testing-code-you-didnt-write": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Characterization tests (Working Effectively with Legacy Code)",
+      "url": "https://martinfowler.com/bliki/CharacterizationTest.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Approval testing",
+      "url": "https://approvaltests.com/",
+      "source": "ApprovalTests"
+    }
+  ],
+  "linting-formatting-static-analysis": [
+    {
+      "rank": 1,
+      "type": "tool",
+      "title": "Ruff \u2014 fast Python linter and formatter",
+      "url": "https://docs.astral.sh/ruff/",
+      "source": "Ruff / Astral"
+    },
+    {
+      "rank": 2,
+      "type": "tool",
+      "title": "ESLint \u2014 JavaScript linting",
+      "url": "https://eslint.org/",
+      "source": "ESLint"
+    }
+  ],
+  "debugging-method": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The Debugging Sucks! rules",
+      "url": "https://blog.regehr.org/archives/199",
+      "source": "John Regehr"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Debugging: The 9 indispensable rules",
+      "url": "https://www.debuggingrules.com/",
+      "source": "David Agans"
+    }
+  ],
+  "reading-unfamiliar-codebases": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "How to get up to speed on an unfamiliar codebase",
+      "url": "https://martinfowler.com/articles/unfamiliar-codebase.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Code reading skills",
+      "url": "https://www.coderstool.com/blog/reading-code",
+      "source": "Coder's Tool"
+    }
+  ],
+  "refactoring-safely": [
+    {
+      "rank": 1,
+      "type": "book",
+      "title": "Refactoring (Martin Fowler)",
+      "url": "https://martinfowler.com/books/refactoring.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Refactoring techniques",
+      "url": "https://refactoring.com/catalog/",
+      "source": "refactoring.com"
+    }
+  ],
+  "tech-debt-tradeoffs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Technical Debt",
+      "url": "https://martinfowler.com/bliki/TechnicalDebt.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Technical Debt Quadrant",
+      "url": "https://martinfowler.com/bliki/TechnicalDebtQuadrant.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "decomposition-estimation": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Agile estimation techniques",
+      "url": "https://www.atlassian.com/agile/project-management/estimation",
+      "source": "Atlassian"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "The #NoEstimates movement",
+      "url": "https://ronjeffries.com/xprog/articles/the-noestimates-movement/",
+      "source": "Ron Jeffries"
+    }
+  ],
+  "writing-docs-design-proposals": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Writing design docs at Google",
+      "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+      "source": "Malte Ubl"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "A design doc template",
+      "url": "https://www.range.co/blog/design-doc",
+      "source": "Range"
+    }
+  ],
+  "code-review-judgment": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Google code review developer guide",
+      "url": "https://google.github.io/eng-practices/review/",
+      "source": "Google eng-practices"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "How to do code reviews like a human",
+      "url": "https://mtlynch.io/human-code-reviews-1/",
+      "source": "Michael Lynch"
+    }
+  ],
+  "processes-vs-threads": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Processes vs threads",
+      "url": "https://www.baeldung.com/cs/process-vs-thread",
+      "source": "Baeldung"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Operating systems: processes and threads (OSTEP)",
+      "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+      "source": "OSTEP"
+    }
+  ],
+  "memory-model-stack-heap": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Stack vs heap memory",
+      "url": "https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Memory layout of a program",
+      "url": "https://www.baeldung.com/linux/memory-layout",
+      "source": "Baeldung"
+    }
+  ],
+  "filesystem-permissions": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Linux file permissions explained",
+      "url": "https://www.redhat.com/sysadmin/linux-file-permissions-explained",
+      "source": "Red Hat"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Unix permissions cheatsheet",
+      "url": "https://chmodcommand.com/",
+      "source": "chmod command"
+    }
+  ],
+  "env-vars-process-config": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The Twelve-Factor App \u2014 Config",
+      "url": "https://12factor.net/config",
+      "source": "12factor.net"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Environment variables best practices",
+      "url": "https://martinfowler.com/articles/application-configuration.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "signals-graceful-shutdown": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Graceful shutdown of a server",
+      "url": "https://blog.pragmaticengineer.com/graceful-shutdown/",
+      "source": "Pragmatic Engineer"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Linux signals \u2014 man page",
+      "url": "https://man7.org/linux/man-pages/man7/signal.7.html",
+      "source": "man7.org"
+    }
+  ],
+  "shell-cli-fluency": [
+    {
+      "rank": 1,
+      "type": "book",
+      "title": "The Linux Command Line (free)",
+      "url": "https://linuxcommand.org/tlcl.php",
+      "source": "linuxcommand.org"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "The Art of Command Line",
+      "url": "https://github.com/jlevy/the-art-of-command-line",
+      "source": "jlevy"
+    }
+  ],
+  "resource-limits": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Understanding resource limits (ulimit)",
+      "url": "https://www.redhat.com/sysadmin/linux-ulimit-command",
+      "source": "Red Hat"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "CPU, memory, file descriptor limits",
+      "url": "https://www.baeldung.com/linux/ulimit",
+      "source": "Baeldung"
+    }
+  ],
+  "request-lifecycle": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "What happens when you type a URL in the browser",
+      "url": "https://github.com/alex/what-happens-when",
+      "source": "alex/what-happens-when"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "DNS, TCP, TLS, HTTP explained",
+      "url": "https://www.youtube.com/watch?v=e4S8zfLdLgQ",
+      "source": "Hussein Nasser"
+    }
+  ],
+  "status-codes-headers-caching": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "MDN \u2014 HTTP response status codes",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status",
+      "source": "MDN"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "HTTP caching",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching",
+      "source": "MDN"
+    }
+  ],
+  "cookies-sessions-cors": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "MDN \u2014 CORS",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
+      "source": "MDN"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "MDN \u2014 HTTP cookies",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies",
+      "source": "MDN"
+    }
+  ],
+  "latency-vs-throughput": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Latency numbers every programmer should know",
+      "url": "https://gist.github.com/jboner/2841832",
+      "source": "Jeff Dean / jboner"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Latency vs throughput",
+      "url": "https://www.baeldung.com/cs/latency-vs-throughput",
+      "source": "Baeldung"
+    }
+  ],
+  "load-balancers-proxies": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Load balancing algorithms",
+      "url": "https://www.nginx.com/resources/glossary/load-balancing/",
+      "source": "nginx"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Reverse proxy vs load balancer",
+      "url": "https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/",
+      "source": "Cloudflare"
+    }
+  ],
+  "cdns": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "What is a CDN?",
+      "url": "https://www.cloudflare.com/learning/cdn/what-is-a-cdn/",
+      "source": "Cloudflare"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "How CDNs work",
+      "url": "https://web.dev/content-delivery-networks/",
+      "source": "web.dev"
+    }
+  ],
+  "websockets-long-lived": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "MDN \u2014 WebSockets API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+      "source": "MDN"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "WebSockets vs SSE vs long-polling",
+      "url": "https://ably.com/topic/websockets-vs-sse",
+      "source": "Ably"
+    }
+  ],
+  "dom-browser-rendering": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "How browsers work",
+      "url": "https://web.dev/howbrowserswork/",
+      "source": "web.dev"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "MDN \u2014 Critical rendering path",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path",
+      "source": "MDN"
+    }
+  ],
+  "event-loop-blocking": [
+    {
+      "rank": 1,
+      "type": "video",
+      "title": "What the heck is the event loop anyway?",
+      "url": "https://www.youtube.com/watch?v=8aGhZQkoFbQ",
+      "source": "JSConf / Philip Roberts"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "MDN \u2014 Event loop",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop",
+      "source": "MDN"
+    }
+  ],
+  "component-model-state": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "React \u2014 Managing state",
+      "url": "https://react.dev/learn/managing-state",
+      "source": "React"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Thinking in React",
+      "url": "https://react.dev/learn/thinking-in-react",
+      "source": "React"
+    }
+  ],
+  "client-side-routing": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Client-side routing concepts",
+      "url": "https://reactrouter.com/en/main/start/concepts",
+      "source": "React Router"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "History API (MDN)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/History_API",
+      "source": "MDN"
+    }
+  ],
+  "ssr-csr-ssg": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "SSR vs CSR vs SSG vs ISR",
+      "url": "https://nextjs.org/docs/pages/building-your-application/rendering",
+      "source": "Next.js"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Rendering on the web",
+      "url": "https://web.dev/rendering-on-the-web/",
+      "source": "web.dev"
+    }
+  ],
+  "data-fetching-loading-error": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Async request patterns in React",
+      "url": "https://react.dev/reference/react/use",
+      "source": "React"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Handling loading and error states",
+      "url": "https://tanstack.com/query/latest/docs/framework/react/guides/queries",
+      "source": "TanStack Query"
+    }
+  ],
+  "bundling-build-tooling": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "webpack concepts",
+      "url": "https://webpack.js.org/concepts/",
+      "source": "webpack"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Vite \u2014 why and how",
+      "url": "https://vitejs.dev/guide/why.html",
+      "source": "Vite"
+    }
+  ],
+  "responsive-layout-css": [
+    {
+      "rank": 1,
+      "type": "course",
+      "title": "CSS Grid and Flexbox (web.dev)",
+      "url": "https://web.dev/learn/css/",
+      "source": "web.dev"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Responsive web design basics",
+      "url": "https://web.dev/responsive-web-design-basics/",
+      "source": "web.dev"
+    }
+  ],
+  "accessibility": [
+    {
+      "rank": 1,
+      "type": "course",
+      "title": "MDN \u2014 Accessibility guide",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn/Accessibility",
+      "source": "MDN"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Web Content Accessibility Guidelines (WCAG)",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "source": "W3C"
+    }
+  ],
+  "browser-devtools": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Chrome DevTools documentation",
+      "url": "https://developer.chrome.com/docs/devtools",
+      "source": "Chrome"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Firefox Developer Tools",
+      "url": "https://firefox-source-docs.mozilla.org/devtools-user/",
+      "source": "Firefox"
+    }
+  ],
+  "relational-modeling-normalization": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Database normalization (1NF-3NF)",
+      "url": "https://www.geeksforgeeks.org/normal-forms-in-dbms/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "book",
+      "title": "Database Design for Mere Mortals",
+      "url": "https://www.pearson.com/en-us/subject-catalog/p/database-design-for-mere-mortals/P200000000857",
+      "source": "Pearson"
+    }
+  ],
+  "sql-fluency": [
+    {
+      "rank": 1,
+      "type": "tool",
+      "title": "SQLBolt \u2014 interactive SQL lessons",
+      "url": "https://sqlbolt.com/",
+      "source": "SQLBolt"
+    },
+    {
+      "rank": 2,
+      "type": "course",
+      "title": "Mode \u2014 SQL tutorial",
+      "url": "https://mode.com/sql-tutorial/",
+      "source": "Mode"
+    }
+  ],
+  "indexes-query-plans": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Use the Index, Luke",
+      "url": "https://use-the-index-luke.com/",
+      "source": "Markus Winand"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "PostgreSQL \u2014 EXPLAIN explained",
+      "url": "https://www.postgresql.org/docs/current/using-explain.html",
+      "source": "PostgreSQL"
+    }
+  ],
+  "transactions-acid-isolation": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "A beginner's guide to ACID and isolation levels",
+      "url": "https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/",
+      "source": "Vlad Mihalcea"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Isolation levels (PostgreSQL)",
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "source": "PostgreSQL"
+    }
+  ],
+  "n-plus-1-connection-pooling": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "What is the N+1 query problem?",
+      "url": "https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping",
+      "source": "Stack Overflow"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Connection pooling",
+      "url": "https://www.cockroachlabs.com/blog/what-is-connection-pooling/",
+      "source": "CockroachDB"
+    }
+  ],
+  "nosql-families-tradeoffs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "NoSQL database types",
+      "url": "https://www.mongodb.com/resources/basics/databases/nosql-explained",
+      "source": "MongoDB"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "SQL vs NoSQL tradeoffs",
+      "url": "https://www.digitalocean.com/community/tutorials/understanding-sql-and-nosql-databases-and-different-database-models",
+      "source": "DigitalOcean"
+    }
+  ],
+  "http-rest-design": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "RESTful API design best practices",
+      "url": "https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/",
+      "source": "Stack Overflow Blog"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "REST architectural constraints",
+      "url": "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
+      "source": "Fielding dissertation"
+    }
+  ],
+  "idempotency-pagination-versioning": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "API pagination patterns",
+      "url": "https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/",
+      "source": "Moesif"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Idempotent REST APIs",
+      "url": "https://www.restapitutorial.com/lessons/idempotency.html",
+      "source": "REST API Tutorial"
+    }
+  ],
+  "authn-authz": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "OAuth 2.0 simplified",
+      "url": "https://aaronparecki.com/oauth-2-simplified/",
+      "source": "Aaron Parecki"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "JWT vs sessions vs API keys",
+      "url": "https://supertokens.com/blog/all-you-need-to-know-about-user-session-security",
+      "source": "SuperTokens"
+    }
+  ],
+  "graphql-grpc-tradeoffs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "GraphQL vs gRPC vs REST",
+      "url": "https://www.apollographql.com/blog/graphql-vs-rest",
+      "source": "Apollo"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "gRPC introduction",
+      "url": "https://grpc.io/docs/what-is-grpc/introduction/",
+      "source": "gRPC"
+    }
+  ],
+  "sync-vs-async-integration": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Synchronous vs asynchronous APIs",
+      "url": "https://www.baeldung.com/cs/synchronous-vs-asynchronous-communication",
+      "source": "Baeldung"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Sync vs async request-response patterns",
+      "url": "https://www.redhat.com/architect/api-sync-async",
+      "source": "Red Hat"
+    }
+  ],
+  "webhooks-vs-polling": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Webhooks explained",
+      "url": "https://www.zapier.com/resources/guides/apis/webhooks",
+      "source": "Zapier"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Webhooks vs polling",
+      "url": "https://www.redhat.com/en/topics/api/what-is-a-webhook",
+      "source": "Red Hat"
+    }
+  ],
+  "owasp-core": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "OWASP Top 10",
+      "url": "https://owasp.org/Top10/",
+      "source": "OWASP"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "OWASP Cheat Sheet Series",
+      "url": "https://cheatsheetseries.owasp.org/",
+      "source": "OWASP"
+    }
+  ],
+  "input-validation-trust-boundaries": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Input validation and trust boundaries",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "source": "OWASP"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "CWE-20: Improper input validation",
+      "url": "https://cwe.mitre.org/data/definitions/20.html",
+      "source": "MITRE CWE"
+    }
+  ],
+  "secrets-handling": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Secrets management best practices",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "source": "OWASP"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Secret scanning in git history",
+      "url": "https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning",
+      "source": "GitHub"
+    }
+  ],
+  "tls-certificates": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "How TLS works",
+      "url": "https://www.cloudflare.com/learning/ssl/how-does-ssl-work/",
+      "source": "Cloudflare"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "TLS 1.3 \u2014 A walkthrough",
+      "url": "https://blog.cloudflare.com/rfc-8446-aka-tls-1-3/",
+      "source": "Cloudflare"
+    }
+  ],
+  "requirements-to-arch": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Software Architecture Characteristics",
+      "url": "https://www.oreilly.com/library/view/fundamentals-of-software/9781492043447/",
+      "source": "O'Reilly"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Non-functional requirements",
+      "url": "https://martinfowler.com/articles/architecting-for-change.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "statelessness-horizontal-scaling": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Scaling horizontally vs vertically",
+      "url": "https://www.digitalocean.com/resources/articles/horizontal-scaling",
+      "source": "DigitalOcean"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Stateless vs stateful services",
+      "url": "https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless",
+      "source": "Red Hat"
+    }
+  ],
+  "architecture-styles": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Architecture styles overview",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/",
+      "source": "Microsoft"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Microservices vs monolith (Fowler)",
+      "url": "https://martinfowler.com/articles/microservices.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "coupling-cohesion": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Coupling and cohesion",
+      "url": "https://en.wikipedia.org/wiki/Coupling_(computer_programming)",
+      "source": "Wikipedia"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Cohesion (computer science)",
+      "url": "https://en.wikipedia.org/wiki/Cohesion_(computer_science)",
+      "source": "Wikipedia"
+    }
+  ],
+  "adrs-tradeoff-docs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Architecture Decision Records",
+      "url": "https://adr.github.io/",
+      "source": "adr.github.io"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Documenting architecture decisions",
+      "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+      "source": "Cognitect"
+    }
+  ],
+  "build-pipelines-ci": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "CI/CD fundamentals (GitHub Actions)",
+      "url": "https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions",
+      "source": "GitHub"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Continuous integration (Fowler)",
+      "url": "https://martinfowler.com/articles/continuousIntegration.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "deployment-strategies-rollback": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Deployment strategies: blue-green, canary, rolling",
+      "url": "https://www.redhat.com/en/topics/devops/what-is-blue-green-deployment",
+      "source": "Red Hat"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Canary deployments",
+      "url": "https://martinfowler.com/bliki/CanaryRelease.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "containers": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Docker \u2014 Get started",
+      "url": "https://docs.docker.com/get-started/",
+      "source": "Docker"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Dockerfile best practices",
+      "url": "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
+      "source": "Docker"
+    }
+  ],
+  "orchestration-concepts": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Kubernetes concepts",
+      "url": "https://kubernetes.io/docs/concepts/",
+      "source": "Kubernetes"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Kubernetes: pods, services, deployments",
+      "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+      "source": "Kubernetes"
+    }
+  ],
+  "infrastructure-as-code": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Infrastructure as Code (Fowler)",
+      "url": "https://martinfowler.com/bliki/InfrastructureAsCode.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Terraform introduction",
+      "url": "https://developer.hashicorp.com/terraform/intro",
+      "source": "HashiCorp"
+    }
+  ],
+  "config-secrets-management": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The Twelve-Factor App \u2014 Config",
+      "url": "https://12factor.net/config",
+      "source": "12factor.net"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Vault \u2014 secrets management",
+      "url": "https://developer.hashicorp.com/vault/docs/what-is-vault",
+      "source": "HashiCorp"
+    }
+  ],
+  "environments-promotion": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Environments and promotion patterns",
+      "url": "https://martinfowler.com/bliki/DeploymentPipeline.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Development vs staging vs production",
+      "url": "https://www.atlassian.com/continuous-delivery/software-testing/software-environments",
+      "source": "Atlassian"
+    }
+  ],
+  "artifact-dependency-management": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Artifact repositories and registries",
+      "url": "https://www.jfrog.com/confluence/display/JFROG/Artifactory",
+      "source": "JFrog"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Semantic Versioning",
+      "url": "https://semver.org/",
+      "source": "semver.org"
+    }
+  ],
+  "structured-logging": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Structured logging \u2014 the why and how",
+      "url": "https://www.baeldung.com/structured-logging",
+      "source": "Baeldung"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "12-factor logs",
+      "url": "https://12factor.net/logs",
+      "source": "12factor.net"
+    }
+  ],
+  "metrics-dashboards": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Prometheus \u2014 documentation",
+      "url": "https://prometheus.io/docs/introduction/overview/",
+      "source": "Prometheus"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Grafana \u2014 dashboards",
+      "url": "https://grafana.com/docs/grafana/latest/dashboards/",
+      "source": "Grafana"
+    }
+  ],
+  "distributed-tracing": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "OpenTelemetry \u2014 tracing concepts",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "source": "OpenTelemetry"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Distributed tracing (Dapper paper)",
+      "url": "https://research.google/pubs/pub36356/",
+      "source": "Google Research"
+    }
+  ],
+  "three-pillars": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The three pillars of observability",
+      "url": "https://www.dynatrace.com/news/blog/the-three-pillars-of-observability/",
+      "source": "Dynatrace"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Logs vs metrics vs traces",
+      "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+      "source": "OpenTelemetry"
+    }
+  ],
+  "slis-slos-error-budgets": [
+    {
+      "rank": 1,
+      "type": "book",
+      "title": "Site Reliability Engineering \u2014 SLOs",
+      "url": "https://sre.google/sre-book/service-level-objectives/",
+      "source": "Google SRE"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Implementing SLOs (Google SRE workbook)",
+      "url": "https://sre.google/workbook/implementing-slos/",
+      "source": "Google SRE"
+    }
+  ],
+  "alerting-oncall": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "My Philosophy on Alerting",
+      "url": "https://docs.google.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/",
+      "source": "Rob Ewaschuk"
+    },
+    {
+      "rank": 2,
+      "type": "book",
+      "title": "On-call (Google SRE)",
+      "url": "https://sre.google/sre-book/being-on-call/",
+      "source": "Google SRE"
+    }
+  ],
+  "incident-response-postmortems": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Blameless postmortems",
+      "url": "https://sre.google/sre-book/postmortem-culture/",
+      "source": "Google SRE"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Incident response (Atlassian)",
+      "url": "https://www.atlassian.com/incident-management",
+      "source": "Atlassian"
+    }
+  ],
+  "debugging-production": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Debugging production systems",
+      "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+      "source": "Google SRE"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Brendan Gregg \u2014 performance analysis methodology",
+      "url": "https://www.brendangregg.com/methodology.html",
+      "source": "Brendan Gregg"
+    }
+  ],
+  "caching-layers": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Redis \u2014 documentation",
+      "url": "https://redis.io/docs/latest/",
+      "source": "Redis"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Caching strategies (Redis)",
+      "url": "https://redis.io/blog/cache-aside-pattern/",
+      "source": "Redis"
+    }
+  ],
+  "migrations-zero-downtime": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Zero-downtime database migrations",
+      "url": "https://www.baeldung.com/ops/zero-downtime-migrations",
+      "source": "Baeldung"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Expand/contract migration pattern",
+      "url": "https://martinfowler.com/bliki/ParallelChange.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "sharding-replication": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Database sharding explained",
+      "url": "https://www.digitalocean.com/community/tutorials/understanding-database-sharding",
+      "source": "DigitalOcean"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Replication vs sharding",
+      "url": "https://www.mongodb.com/resources/basics/databases/replication",
+      "source": "MongoDB"
+    }
+  ],
+  "backup-restore-dr": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Backup and disaster recovery strategies",
+      "url": "https://www.postgresql.org/docs/current/backup.html",
+      "source": "PostgreSQL"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "RPO and RTO explained",
+      "url": "https://www.druva.com/blog/understanding-rpo-and-rto/",
+      "source": "Druva"
+    }
+  ],
+  "message-queues-event-streams": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Message queues vs event streams",
+      "url": "https://www.confluent.io/blog/message-queue-vs-event-stream/",
+      "source": "Confluent"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Apache Kafka \u2014 introduction",
+      "url": "https://kafka.apache.org/intro",
+      "source": "Apache Kafka"
+    }
+  ],
+  "retries-backoff-circuit-breakers": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Circuit breaker pattern",
+      "url": "https://martinfowler.com/bliki/CircuitBreaker.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Exponential backoff and jitter",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+      "source": "AWS Builders' Library"
+    }
+  ],
+  "rate-limiting": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Rate limiting algorithms",
+      "url": "https://konghq.com/blog/engineering/how-to-design-a-scalable-rate-limiting-algorithm",
+      "source": "Kong"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Token bucket vs leaky bucket",
+      "url": "https://www.geeksforgeeks.org/token-bucket-algorithm/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "schema-contract-management": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "API versioning and contract management",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design",
+      "source": "Microsoft"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Schema evolution (Avro/Protobuf)",
+      "url": "https://docs.confluent.io/platform/current/schema-registry/index.html",
+      "source": "Confluent"
+    }
+  ],
+  "least-privilege-iam": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Principle of least privilege",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+      "source": "AWS"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "IAM least privilege (Google Cloud)",
+      "url": "https://cloud.google.com/iam/docs/using-iam-securely",
+      "source": "Google Cloud"
+    }
+  ],
+  "dependency-supply-chain-risk": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Supply chain attacks and mitigation",
+      "url": "https://slsa.dev/",
+      "source": "SLSA"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Dependency confusion attacks",
+      "url": "https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610",
+      "source": "Alex Birsan"
+    }
+  ],
+  "pii-data-classification": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Data classification and PII handling",
+      "url": "https://csrc.nist.gov/publications/detail/sp/800-122/final",
+      "source": "NIST"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "GDPR personal data definition",
+      "url": "https://gdpr-info.eu/art-4-gdpr/",
+      "source": "gdpr-info.eu"
+    }
+  ],
+  "threat-modeling": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Threat modeling (OWASP)",
+      "url": "https://owasp.org/www-community/Threat_Modeling",
+      "source": "OWASP"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "STRIDE threat model",
+      "url": "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats",
+      "source": "Microsoft"
+    }
+  ],
+  "caching-strategies-invalidation": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Caching strategies and invalidation",
+      "url": "https://redis.io/blog/cache-aside-pattern/",
+      "source": "Redis"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "There are only two hard things: cache invalidation",
+      "url": "https://martinfowler.com/bliki/TwoHardThings.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "consistency-models-cap": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "CAP theorem explained",
+      "url": "https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html",
+      "source": "Martin Kleppmann"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Consistency models",
+      "url": "https://jepsen.io/consistency",
+      "source": "Jepsen"
+    }
+  ],
+  "designing-for-failure": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Designing for failure",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/designing-for-failure.html",
+      "source": "AWS"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Chaos engineering principles",
+      "url": "https://principlesofchaos.org/",
+      "source": "Principles of Chaos"
+    }
+  ],
+  "idempotency-exactly-once": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Exactly-once delivery is a myth",
+      "url": "https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/",
+      "source": "Confluent"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Idempotency keys",
+      "url": "https://stripe.com/blog/idempotency",
+      "source": "Stripe"
+    }
+  ],
+  "capacity-estimation": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Back-of-the-envelope calculations",
+      "url": "https://github.com/donnemartin/system-design-primer#back-of-the-envelope-calculations",
+      "source": "donnemartin/system-design-primer"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "System design primer",
+      "url": "https://github.com/donnemartin/system-design-primer",
+      "source": "donnemartin"
+    }
+  ],
+  "distributed-systems-depth": [
+    {
+      "rank": 1,
+      "type": "book",
+      "title": "Designing Data-Intensive Applications",
+      "url": "https://dataintensive.net/",
+      "source": "Martin Kleppmann"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Raft consensus algorithm",
+      "url": "https://raft.github.io/",
+      "source": "raft.github.io"
+    }
+  ],
+  "profiling-methodology": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Brendan Gregg \u2014 Linux performance analysis",
+      "url": "https://www.brendangregg.com/linuxperf.html",
+      "source": "Brendan Gregg"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "CPU profiling guide",
+      "url": "https://www.brendangregg.com/flamegraphs.html",
+      "source": "Brendan Gregg"
+    }
+  ],
+  "finding-actual-bottleneck": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The USE method",
+      "url": "https://www.brendangregg.com/usemethod.html",
+      "source": "Brendan Gregg"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Performance analysis methodology",
+      "url": "https://www.brendangregg.com/methodology.html",
+      "source": "Brendan Gregg"
+    }
+  ],
+  "load-testing": [
+    {
+      "rank": 1,
+      "type": "tool",
+      "title": "k6 \u2014 load testing tool",
+      "url": "https://k6.io/docs/",
+      "source": "k6"
+    },
+    {
+      "rank": 2,
+      "type": "tool",
+      "title": "Artillery \u2014 load testing",
+      "url": "https://www.artillery.io/docs",
+      "source": "Artillery"
+    }
+  ],
+  "capacity-planning": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Capacity planning for services",
+      "url": "https://sre.google/workbook/capacity-planning/",
+      "source": "Google SRE"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Performance budgets",
+      "url": "https://web.dev/performance-budgets-101/",
+      "source": "web.dev"
+    }
+  ],
+  "ill-defined-to-scoped-plan": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Turning ambiguity into scope",
+      "url": "https://staffeng.com/guides/",
+      "source": "staffeng.com"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "How to scope and estimate",
+      "url": "https://staffeng.com/guides/scope-projects/",
+      "source": "staffeng.com"
+    }
+  ],
+  "pushing-back-on-requirements": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Saying no to requirements",
+      "url": "https://staffeng.com/guides/saying-no/",
+      "source": "staffeng.com"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Negotiating requirements",
+      "url": "https://www.joelonsoftware.com/2000/04/26/designing-for-people-who-have-better-things-to-do-with-their-lives/",
+      "source": "Joel on Software"
+    }
+  ],
+  "deciding-what-not-to-build": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "The art of saying no",
+      "url": "https://www.productplan.com/learn/saying-no/",
+      "source": "ProductPlan"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Opportunity cost in software",
+      "url": "https://martinfowler.com/bliki/OpportunisticRefactoring.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "prompt-to-design-doc": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Design doc templates and examples",
+      "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+      "source": "Malte Ubl"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Writing effective design docs",
+      "url": "https://www.range.co/blog/design-doc",
+      "source": "Range"
+    }
+  ],
+  "writing-rfcs-adrs-buyin": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "RFC process (Rust)",
+      "url": "https://rust-lang.github.io/rfcs/",
+      "source": "Rust"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Getting buy-in for technical proposals",
+      "url": "https://staffeng.com/guides/writing-rfcs/",
+      "source": "staffeng.com"
+    }
+  ],
+  "running-design-review": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Running effective design reviews",
+      "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+      "source": "Malte Ubl"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Design review culture",
+      "url": "https://staffeng.com/guides/",
+      "source": "staffeng.com"
+    }
+  ],
+  "disagree-and-commit": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Disagree and commit",
+      "url": "https://www.16personalities.com/articles/disagree-and-commit",
+      "source": "16Personalities"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Amazon's leadership principles",
+      "url": "https://www.amazon.jobs/content/en/our-workplace/leadership-principles",
+      "source": "Amazon"
+    }
+  ],
+  "saying-no-to-senior": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Pushing back effectively",
+      "url": "https://staffeng.com/guides/push-back/",
+      "source": "staffeng.com"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Managing up",
+      "url": "https://www.radicalcandor.com/",
+      "source": "Radical Candor"
+    }
+  ],
+  "negotiating-scope-across-teams": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Negotiating scope",
+      "url": "https://staffeng.com/guides/",
+      "source": "staffeng.com"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Cross-team collaboration",
+      "url": "https://martinfowler.com/articles/microservices.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "code-review-as-teaching": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Code review as teaching",
+      "url": "https://google.github.io/eng-practices/review/reviewer/",
+      "source": "Google eng-practices"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Compassionate code reviews",
+      "url": "https://mtlynch.io/human-code-reviews-1/",
+      "source": "Michael Lynch"
+    }
+  ],
+  "raising-team-bar": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Raising the engineering bar",
+      "url": "https://staffeng.com/guides/",
+      "source": "staffeng.com"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Engineering culture",
+      "url": "https://review.firstround.com/engineering-culture",
+      "source": "First Round Review"
+    }
+  ],
+  "onboarding-others": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Onboarding engineers",
+      "url": "https://www.gsb.stanford.edu/insights/successful-onboarding",
+      "source": "Stanford GSB"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Building onboarding docs",
+      "url": "https://review.firstround.com/onboarding",
+      "source": "First Round Review"
+    }
+  ],
+  "struggle-vs-unblock": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Coaching and unblocking",
+      "url": "https://www.radicalcandor.com/",
+      "source": "Radical Candor"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Situational leadership",
+      "url": "https://situational.com/",
+      "source": "The Center for Leadership Studies"
+    }
+  ],
+  "migration-deprecation-strategy": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Strangler fig pattern",
+      "url": "https://martinfowler.com/bliki/StranglerFigApplication.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Migrating legacy systems",
+      "url": "https://martinfowler.com/articles/break-monolith-into-microservices.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "build-vs-buy": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Build vs buy decisions",
+      "url": "https://martinfowler.com/bliki/BuildVsBuy.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Vendor evaluation",
+      "url": "https://www.gartner.com/en/information-technology/glossary/vendor-assessment",
+      "source": "Gartner"
+    }
+  ],
+  "org-wide-fix-from-postmortem": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Postmortem culture",
+      "url": "https://sre.google/sre-book/postmortem-culture/",
+      "source": "Google SRE"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Driving org-wide change",
+      "url": "https://staffeng.com/guides/",
+      "source": "staffeng.com"
+    }
+  ],
+  "legacy-system-stewardship": [
+    {
+      "rank": 1,
+      "type": "book",
+      "title": "Working Effectively with Legacy Code",
+      "url": "https://www.oreilly.com/library/view/working-effectively-with/0131177052/",
+      "source": "Michael Feathers"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Strangler fig pattern",
+      "url": "https://martinfowler.com/bliki/StranglerFigApplication.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "good-enough-vs-debt": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Technical debt",
+      "url": "https://martinfowler.com/bliki/TechnicalDebt.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Ward Cunningham on debt metaphor",
+      "url": "https://martinfowler.com/bliki/TechnicalDebt.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "pragmatism-vs-perfectionism": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Pragmatic Programmer (principles)",
+      "url": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/",
+      "source": "Pragmatic Bookshelf"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Good enough engineering",
+      "url": "https://staffeng.com/guides/",
+      "source": "staffeng.com"
+    }
+  ],
+  "escalate-vs-absorb-risk": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Risk escalation",
+      "url": "https://www.pmi.org/learning/library/risk-escalation-10173",
+      "source": "PMI"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Managing risk in software",
+      "url": "https://martinfowler.com/bliki/",
+      "source": "Martin Fowler"
+    }
+  ]
+}
