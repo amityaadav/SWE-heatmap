@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { DEPTH_NUMERIC, computeDomainAverage } from "@/lib/types";
 import type { Profile, DepthLevel } from "@/lib/types";
+import { TIER_LABELS } from "@/data/domains";
 
 const LEVELS: { key: number; level: DepthLevel; desc: string }[] = [
   { key: 0, level: "Unaware",             desc: "No demonstrated knowledge" },
@@ -145,7 +146,11 @@ export default function Heatmap({ profile }: { profile: Profile }) {
       <div className="grid items-start gap-[clamp(20px,3vw,44px)] lg:grid-cols-[minmax(0,1fr)_320px]">
         {/* Domain grid */}
         <main>
-          {domainEntries.map(([id, domain]) => {
+          {domainEntries.map(([id, domain], idx) => {
+            const currentTier = domain.tier ?? 0;
+            const prevTier = idx > 0 ? (domainEntries[idx - 1][1].tier ?? 0) : -1;
+            const showTierHeader = currentTier !== prevTier;
+
             const topics = Object.entries(domain.leaf_topics);
             const localCounts: Record<number, number> = {
               0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0,
@@ -159,7 +164,15 @@ export default function Heatmap({ profile }: { profile: Profile }) {
             const assessedCount = topics.filter(([, t]) => t.assessed).length;
 
             return (
-              <section key={id} className="border-t border-ink py-4">
+              <div key={id}>
+              {showTierHeader && (
+                <div className="mb-2 mt-8 first:mt-0 border-b-2 border-ink pb-2">
+                  <span className="font-mono text-[10.5px] font-semibold uppercase tracking-[.15em] text-ink-3">
+                    Tier {currentTier} — {TIER_LABELS[currentTier] || ""}
+                  </span>
+                </div>
+              )}
+              <section className="border-t border-ink py-4">
                 <div className="mb-3 flex flex-wrap items-baseline gap-[14px]">
                   <h2 className="m-0 font-display text-[17px] font-bold tracking-[-0.012em]">
                     {domain.domain_name}
@@ -228,6 +241,7 @@ export default function Heatmap({ profile }: { profile: Profile }) {
                   })}
                 </div>
               </section>
+              </div>
             );
           })}
         </main>

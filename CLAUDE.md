@@ -29,7 +29,8 @@ Interactive self-assessment tool for software engineering skills. LLM-judged eva
 - Ollama API key stays server-side only (GCP Secret Manager, mounted on Cloud Run)
 - `NEXT_PUBLIC_*` Firebase vars are passed as Docker build args (not runtime env vars) because Next.js inlines them at build time
 - Auth session persists across page loads via `onAuthStateChanged`
-- 21 domains, 153 leaf topics, six depth levels: Unaware → Recognize → Explain → Apply → Debug under pressure → Teach
+- 25 domains across 6 progressive tiers, 153 leaf topics, six depth levels: Unaware → Recognize → Explain → Apply → Debug under pressure → Teach
+- Domains ordered by complexity (foundations first, senior/leadership last); cross-cutting domains (Database, API, Security, System Design) split into fundamentals and advanced
 
 ## File structure
 - `src/app/layout.tsx` — root layout with nav bar (Dashboard link + Take Assessment button)
@@ -44,7 +45,7 @@ Interactive self-assessment tool for software engineering skills. LLM-judged eva
 - `src/lib/firebase-admin.ts` — Firebase Admin SDK init (with ADC fallback for Cloud Run)
 - `src/lib/firebase-client.ts` — Firebase client SDK init
 - `src/lib/ollama.ts` — Ollama Cloud API judge call
-- `src/data/domains.json` — source of truth for all 21 domains and 153 leaf topics
+- `src/data/domains.json` — source of truth for all 25 domains and 153 leaf topics (ordered by tier/complexity)
 - `src/data/domains.ts` — typed wrapper around domains.json
 - `scripts/seed-firestore.cjs` — plain CJS seed script for Firestore (Node v24 compatible)
 
