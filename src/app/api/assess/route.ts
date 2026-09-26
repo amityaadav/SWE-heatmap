@@ -11,10 +11,16 @@ export async function POST(request: NextRequest) {
   }
 
   const token = authHeader.slice(7);
+  let decoded;
   try {
-    await adminAuth.verifyIdToken(token);
+    decoded = await adminAuth.verifyIdToken(token);
   } catch {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+  }
+
+  const allowedEmails = (process.env.ALLOWED_EMAILS || "").split(",").map(e => e.trim()).filter(Boolean);
+  if (allowedEmails.length > 0 && !allowedEmails.includes(decoded.email || "")) {
+    return NextResponse.json({ error: "Access restricted" }, { status: 403 });
   }
 
   const body = await request.json();

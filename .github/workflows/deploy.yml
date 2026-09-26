@@ -49,4 +49,4 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --set-secrets=OLLAMA_CLOUD_API_KEY=ollama-cloud-api-key:latest \
-            --set-env-vars="OLLAMA_CLOUD_API_URL=${{ secrets.OLLAMA_CLOUD_API_URL }}"
+            --set-env-vars="OLLAMA_CLOUD_API_URL=${{ secrets.OLLAMA_CLOUD_API_URL }},ALLOWED_EMAILS=${{ secrets.ALLOWED_EMAILS }}"
