@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import type { Auth, User } from "firebase/auth";
-import { DOMAINS, type DomainSeed } from "@/data/domains";
+import { DOMAINS, TIER_LABELS, type DomainSeed } from "@/data/domains";
 import type { DepthLevel } from "@/lib/types";
 
 type Step = "pick-domain" | "pick-topic" | "loading-question" | "answer" | "submitting" | "result";
@@ -170,20 +170,19 @@ export default function AssessPage() {
     );
   }
 
-  const sectionA = DOMAINS.filter((d) => d.section === "A");
-  const sectionB = DOMAINS.filter((d) => d.section === "B");
+  const tiers = [...new Set(DOMAINS.map((d) => d.tier))].sort((a, b) => a - b);
 
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold">Assessment</h1>
-        <span className="text-sm text-[var(--text-secondary)]">
+        <span className="text-sm text-ink-3">
           {user.displayName}
         </span>
       </div>
 
       {error && (
-        <div className="mb-4 rounded-md bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="mb-4 border border-depth-0 bg-[#fef2f2] p-3 text-sm text-depth-0">
           {error}
         </div>
       )}
@@ -191,45 +190,36 @@ export default function AssessPage() {
       {/* Step 1: Pick domain */}
       {step === "pick-domain" && (
         <div>
-          <p className="mb-6 text-[var(--text-secondary)]">
-            Choose a domain to assess.
+          <p className="mb-6 text-ink-2">
+            Choose a domain to assess. Domains are ordered progressively — foundations first.
           </p>
 
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--text-secondary)]">
-            Section A — Technical Depth
-          </h2>
-          <div className="mb-8 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {sectionA.map((domain) => (
-              <button
-                key={domain.id}
-                onClick={() => { setSelectedDomain(domain); setStep("pick-topic"); }}
-                className="rounded-lg border border-[var(--border)] p-3 text-left hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20"
-              >
-                <p className="font-medium">{domain.domain_name}</p>
-                <p className="mt-1 text-xs text-[var(--text-secondary)]">
-                  {domain.leaf_topics.length} topics · {domain.archetype_tags.join(", ")}
-                </p>
-              </button>
-            ))}
-          </div>
-
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--text-secondary)]">
-            Section B — Senior/Leadership Layer
-          </h2>
-          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {sectionB.map((domain) => (
-              <button
-                key={domain.id}
-                onClick={() => { setSelectedDomain(domain); setStep("pick-topic"); }}
-                className="rounded-lg border border-[var(--border)] p-3 text-left hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20"
-              >
-                <p className="font-medium">{domain.domain_name}</p>
-                <p className="mt-1 text-xs text-[var(--text-secondary)]">
-                  {domain.leaf_topics.length} topics
-                </p>
-              </button>
-            ))}
-          </div>
+          {tiers.map((tier) => {
+            const tierDomains = DOMAINS
+              .filter((d) => d.tier === tier)
+              .sort((a, b) => a.order - b.order);
+            return (
+              <div key={tier} className="mb-8">
+                <h2 className="mb-3 font-mono text-[10.5px] font-semibold uppercase tracking-[.15em] text-ink-3">
+                  Tier {tier} — {TIER_LABELS[tier]}
+                </h2>
+                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {tierDomains.map((domain) => (
+                    <button
+                      key={domain.id}
+                      onClick={() => { setSelectedDomain(domain); setStep("pick-topic"); }}
+                      className="border border-rule bg-paper-2 p-3 text-left transition-colors hover:border-ink hover:bg-white"
+                    >
+                      <p className="font-display text-sm font-bold">{domain.domain_name}</p>
+                      <p className="mt-1 font-mono text-[11px] text-ink-3">
+                        {domain.leaf_topics.length} topics · {domain.archetype_tags.join(", ")}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
 

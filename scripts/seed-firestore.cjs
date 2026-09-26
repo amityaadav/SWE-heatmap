@@ -22,19 +22,11 @@ const app = serviceAccount
 const db = getFirestore(app);
 
 async function seed() {
-  const sectionA = DOMAINS.filter((d) => d.section === "A").reduce(
-    (acc, d) => acc + d.leaf_topics.length,
-    0
-  );
-  const sectionB = DOMAINS.filter((d) => d.section === "B").reduce(
-    (acc, d) => acc + d.leaf_topics.length,
-    0
-  );
-  const total = sectionA + sectionB;
+  const total = DOMAINS.reduce((acc, d) => acc + d.leaf_topics.length, 0);
+  const tiers = [...new Set(DOMAINS.map((d) => d.tier))].sort();
 
   console.log(
-    `Seeding ${DOMAINS.length} domains, ${total} leaf topics ` +
-      `(Section A: ${sectionA}, Section B: ${sectionB})`
+    `Seeding ${DOMAINS.length} domains, ${total} leaf topics across ${tiers.length} tiers`
   );
 
   let batch = db.batch();
@@ -60,7 +52,8 @@ async function seed() {
       {
         domain_name: domain.domain_name,
         archetype_tags: domain.archetype_tags,
-        section: domain.section,
+        tier: domain.tier,
+        order: domain.order,
       },
       { merge: true }
     );

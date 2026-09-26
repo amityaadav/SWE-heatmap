@@ -28,11 +28,18 @@ async function getProfile(): Promise<Profile> {
       domains[domainDoc.id] = {
         domain_name: domainData.domain_name,
         archetype_tags: domainData.archetype_tags || [],
+        tier: domainData.tier,
+        order: domainData.order,
         leaf_topics: leafTopics,
       };
     }
 
-    return { domains };
+    const sorted: Record<string, Domain> = {};
+    Object.entries(domains)
+      .sort(([, a], [, b]) => (a.order ?? 999) - (b.order ?? 999))
+      .forEach(([id, d]) => { sorted[id] = d; });
+
+    return { domains: sorted };
   } catch {
     return { domains: {} };
   }

@@ -42,6 +42,8 @@ export interface LeafTopic {
 export interface Domain {
   domain_name: string;
   archetype_tags: string[];
+  tier?: number;
+  order?: number;
   leaf_topics: Record<string, LeafTopic>;
 }
 
