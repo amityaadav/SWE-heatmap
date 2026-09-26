@@ -1,15 +1,41 @@
-import type { Profile } from "@/lib/types";
+import { adminDb } from "@/lib/firebase-admin";
+import type { Profile, Domain, LeafTopic } from "@/lib/types";
 import Heatmap from "./heatmap";
 
 export const dynamic = "force-dynamic";
 
 async function getProfile(): Promise<Profile> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-  const res = await fetch(`${baseUrl}/api/profile`, {
-    cache: "no-store",
-  });
-  if (!res.ok) return { domains: {} };
-  return res.json();
+  try {
+    const profileDoc = await adminDb.doc("profile/main").get();
+    if (!profileDoc.exists) {
+      return { domains: {} };
+    }
+
+    const domainsSnap = await adminDb.collection("profile/main/domains").get();
+    const domains: Record<string, Domain> = {};
+
+    for (const domainDoc of domainsSnap.docs) {
+      const domainData = domainDoc.data();
+      const leafSnap = await adminDb
+        .collection(`profile/main/domains/${domainDoc.id}/leaf_topics`)
+        .get();
+
+      const leafTopics: Record<string, LeafTopic> = {};
+      for (const leafDoc of leafSnap.docs) {
+        leafTopics[leafDoc.id] = leafDoc.data() as LeafTopic;
+      }
+
+      domains[domainDoc.id] = {
+        domain_name: domainData.domain_name,
+        archetype_tags: domainData.archetype_tags || [],
+        leaf_topics: leafTopics,
+      };
+    }
+
+    return { domains };
+  } catch {
+    return { domains: {} };
+  }
 }
 
 export default async function Dashboard() {
