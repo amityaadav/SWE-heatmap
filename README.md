@@ -1,6 +1,6 @@
 # SWE Knowledge Heatmap
 
-Interactive self-assessment tool for software engineering skills. An LLM judge evaluates your answers against a hiring rubric and scores your depth across 21 domains and 153 topics.
+Interactive self-assessment tool for software engineering skills. An LLM judge evaluates your answers against a hiring rubric and scores your depth across 25 domains and 197 topics.
 
 ## Live Demo
 
