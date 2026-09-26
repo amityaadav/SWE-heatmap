@@ -2,25 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --border: #e5e7eb;
+  --paper: #EDF0F4;
+  --paper-2: #F7F9FB;
+  --ink: #0F131B;
+  --ink-2: #3D4756;
+  --ink-3: #6B7789;
+  --rule: #C8CFD9;
+
+  --L0: #C2382B;
+  --L1: #E8796E;
+  --L2: #F0A99E;
+  --L3: #8ECB92;
+  --L4: #3EA06B;
+  --L5: #1C6B3C;
+
+  --L0-ink: #FFFFFF;
+  --L1-ink: #FFFFFF;
+  --L2-ink: #5C1B12;
+  --L3-ink: #12351A;
+  --L4-ink: #FFFFFF;
+  --L5-ink: #EAF6EE;
+
+  --display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: #111827;
-    --bg-secondary: #1f2937;
-    --text-primary: #f9fafb;
-    --text-secondary: #9ca3af;
-    --border: #374151;
-  }
-}
+* { box-sizing: border-box; }
 
 body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
 }
