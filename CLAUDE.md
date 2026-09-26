@@ -33,10 +33,11 @@ Interactive self-assessment tool for software engineering skills. LLM-judged eva
 - Domains ordered by complexity (foundations first, senior/leadership last); cross-cutting domains (Database, API, Security, System Design) split into fundamentals and advanced
 
 ## File structure
-- `src/app/layout.tsx` — root layout with nav bar (Dashboard link + Take Assessment button)
+- `src/app/layout.tsx` — root layout with nav bar (single "SWE Heatmap" link + Take Assessment button)
+- `src/app/take-assessment-button.tsx` — client component button that routes to `/assess`
 - `src/app/page.tsx` — public dashboard/heatmap (server component, queries Firestore directly)
 - `src/app/heatmap.tsx` — client component for interactive domain drill-down
-- `src/app/assess/page.tsx` — authenticated assessment flow (client component)
+- `src/app/assess/page.tsx` — authenticated assessment flow (client component): linear topic sequence starting from the first topic, with Skip / Previous / Next and a "Jump to" section selector
 - `src/app/api/assess/route.ts` — submit assessment (authed + email allowlist, calls Ollama judge)
 - `src/app/api/question/route.ts` — generate probe question (authed + email allowlist, calls Ollama)
 - `src/app/api/profile/route.ts` — read profile data
