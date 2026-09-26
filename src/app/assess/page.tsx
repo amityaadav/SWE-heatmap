@@ -3,25 +3,49 @@
 import { useState, useEffect, useCallback, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import type { Auth, User } from "firebase/auth";
-import { DOMAINS, TIER_LABELS, type DomainSeed } from "@/data/domains";
+import { DOMAINS, TIER_LABELS } from "@/data/domains";
 import type { DepthLevel } from "@/lib/types";
 import { DEPTH_NUMERIC } from "@/lib/types";
 
-type Step = "pick-domain" | "pick-topic" | "loading-question" | "answer" | "submitting" | "result";
+type Step = "loading-question" | "answer" | "submitting" | "result";
 
 interface JudgeResult {
   depth_level: DepthLevel;
   judge_notes: string;
 }
 
+interface FlatTopic {
+  domainId: string;
+  domainName: string;
+  tier: number;
+  id: string;
+  topic_name: string;
+}
+
+// Flatten the (already tier/order-sorted) domain catalog into a single
+// ordered list of topics — this is the canonical assessment sequence.
+const ALL_TOPICS: FlatTopic[] = DOMAINS.flatMap((d) =>
+  d.leaf_topics.map((t) => ({
+    domainId: d.id,
+    domainName: d.domain_name,
+    tier: d.tier,
+    id: t.id,
+    topic_name: t.topic_name,
+  }))
+);
+
 export default function AssessPage() {
   return (
-    <Suspense fallback={
-      <div className="flex flex-col items-center py-16">
-        <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
-        <p className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">Loading...</p>
-      </div>
-    }>
+    <Suspense
+      fallback={
+        <div className="flex flex-col items-center py-16">
+          <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
+          <p className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">
+            Loading...
+          </p>
+        </div>
+      }
+    >
       <AssessPageInner />
     </Suspense>
   );
@@ -31,17 +55,23 @@ function AssessPageInner() {
   const searchParams = useSearchParams();
   const [user, setUser] = useState<User | null>(null);
   const [firebaseAuth, setFirebaseAuth] = useState<Auth | null>(null);
-  const [step, setStep] = useState<Step>("pick-domain");
-  const [selectedDomain, setSelectedDomain] = useState<DomainSeed | null>(null);
-  const [selectedTopic, setSelectedTopic] = useState<{ id: string; topic_name: string } | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [step, setStep] = useState<Step>("loading-question");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [result, setResult] = useState<JudgeResult | null>(null);
   const [error, setError] = useState("");
 
-  const [authLoading, setAuthLoading] = useState(true);
   const deepLinkHandled = useRef(false);
+  const questionLoadedFor = useRef<number | null>(null);
 
+  const topic = ALL_TOPICS[currentIndex];
+  const isFirst = currentIndex === 0;
+  const isLast = currentIndex === ALL_TOPICS.length - 1;
+
+  // ---- auth ----
   useEffect(() => {
     import("@/lib/firebase-client").then(async (mod) => {
       setFirebaseAuth(mod.auth);
@@ -53,21 +83,66 @@ function AssessPageInner() {
     });
   }, []);
 
+  const getToken = useCallback(async () => {
+    if (!user) throw new Error("Not signed in");
+    return user.getIdToken();
+  }, [user]);
+
+  const loadQuestion = useCallback(
+    async (targetIndex: number) => {
+      const t = ALL_TOPICS[targetIndex];
+      if (!t) return;
+      setCurrentIndex(targetIndex);
+      setStep("loading-question");
+      setQuestion("");
+      setAnswer("");
+      setResult(null);
+      setError("");
+      try {
+        const token = await getToken();
+        const res = await fetch("/api/question", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ topicName: t.topic_name }),
+        });
+        if (!res.ok) {
+          const data = await res.json();
+          throw new Error(data.error || `HTTP ${res.status}`);
+        }
+        const data = await res.json();
+        setQuestion(data.question);
+        questionLoadedFor.current = targetIndex;
+        setStep("answer");
+      } catch (err) {
+        setError(`Failed to generate question: ${(err as Error).message}`);
+        setStep("answer");
+      }
+    },
+    [getToken]
+  );
+
+  // Deep-link from dashboard "Assess this topic": jump straight to that topic.
   useEffect(() => {
     if (deepLinkHandled.current || !user || authLoading) return;
     const domainId = searchParams.get("domain");
     const topicId = searchParams.get("topic");
     if (!domainId || !topicId) return;
-
-    const domain = DOMAINS.find((d) => d.id === domainId);
-    if (!domain) return;
-    const topic = domain.leaf_topics.find((t) => t.id === topicId);
-    if (!topic) return;
-
+    const idx = ALL_TOPICS.findIndex((t) => t.domainId === domainId && t.id === topicId);
+    if (idx === -1) return;
     deepLinkHandled.current = true;
-    setSelectedDomain(domain);
-    handlePickTopic(topic);
-  }, [user, authLoading, searchParams]);
+    loadQuestion(idx);
+  }, [user, authLoading, searchParams, loadQuestion]);
+
+  // Initial entry (no deep link): start from the first topic.
+  useEffect(() => {
+    if (!user || authLoading) return;
+    if (deepLinkHandled.current) return;
+    if (questionLoadedFor.current !== null) return;
+    loadQuestion(0);
+  }, [user, authLoading, loadQuestion]);
 
   async function handleSignIn() {
     if (!firebaseAuth) return;
@@ -81,40 +156,8 @@ function AssessPageInner() {
     }
   }
 
-  const getToken = useCallback(async () => {
-    if (!user) throw new Error("Not signed in");
-    return user.getIdToken();
-  }, [user]);
-
-  async function handlePickTopic(topic: { id: string; topic_name: string }) {
-    setSelectedTopic(topic);
-    setStep("loading-question");
-    setError("");
-    try {
-      const token = await getToken();
-      const res = await fetch("/api/question", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ topicName: topic.topic_name }),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || `HTTP ${res.status}`);
-      }
-      const data = await res.json();
-      setQuestion(data.question);
-      setStep("answer");
-    } catch (err) {
-      setError(`Failed to generate question: ${(err as Error).message}`);
-      setStep("pick-topic");
-    }
-  }
-
   async function handleSubmitAnswer() {
-    if (!selectedDomain || !selectedTopic || !answer.trim()) return;
+    if (!topic || !answer.trim()) return;
     setStep("submitting");
     setError("");
     try {
@@ -126,9 +169,9 @@ function AssessPageInner() {
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          domainId: selectedDomain.id,
-          leafTopicId: selectedTopic.id,
-          topicName: selectedTopic.topic_name,
+          domainId: topic.domainId,
+          leafTopicId: topic.id,
+          topicName: topic.topic_name,
           question,
           answer: answer.trim(),
         }),
@@ -146,30 +189,30 @@ function AssessPageInner() {
     }
   }
 
-  function handleStartOver() {
-    setSelectedDomain(null);
-    setSelectedTopic(null);
-    setQuestion("");
-    setAnswer("");
-    setResult(null);
-    setError("");
-    setStep("pick-domain");
+  function goPrev() {
+    if (!isFirst) loadQuestion(currentIndex - 1);
   }
 
-  function handleAssessAnother() {
-    setSelectedTopic(null);
-    setQuestion("");
-    setAnswer("");
-    setResult(null);
-    setError("");
-    setStep("pick-topic");
+  function goNext() {
+    if (!isLast) loadQuestion(currentIndex + 1);
+  }
+
+  function handleSkip() {
+    goNext();
+  }
+
+  function handleJump(event: React.ChangeEvent<HTMLSelectElement>) {
+    const idx = Number(event.target.value);
+    if (!Number.isNaN(idx)) loadQuestion(idx);
   }
 
   if (authLoading) {
     return (
       <div className="flex flex-col items-center py-16">
         <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
-        <p className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">Loading...</p>
+        <p className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">
+          Loading...
+        </p>
       </div>
     );
   }
@@ -181,8 +224,8 @@ function AssessPageInner() {
           Assessment
         </h1>
         <p className="mb-8 max-w-[50ch] text-[clamp(14px,1.4vw,16px)] leading-[1.55] text-ink-2">
-          Sign in to take an assessment. The LLM judge will evaluate your answers
-          against a six-level software engineering rubric.
+          Sign in to take an assessment. You'll work through topics in order —
+          starting from the first — and can skip ahead or jump between sections.
         </p>
         <button
           onClick={handleSignIn}
@@ -191,14 +234,10 @@ function AssessPageInner() {
         >
           Sign in with Google
         </button>
-        {error && (
-          <p className="mt-4 text-[13px] text-depth-0">{error}</p>
-        )}
+        {error && <p className="mt-4 text-[13px] text-depth-0">{error}</p>}
       </div>
     );
   }
-
-  const tiers = [...new Set(DOMAINS.map((d) => d.tier))].sort((a, b) => a - b);
 
   return (
     <div>
@@ -211,97 +250,57 @@ function AssessPageInner() {
         </span>
       </div>
 
+      {/* Progress + section jump */}
+      <div className="mb-6 flex flex-wrap items-center gap-[10px]">
+        <span className="font-mono text-[11px] uppercase tracking-[.12em] text-ink-3">
+          Topic {currentIndex + 1} of {ALL_TOPICS.length}
+        </span>
+        <div className="ml-auto flex items-center gap-[10px]">
+          <label className="font-mono text-[10.5px] uppercase tracking-[.1em] text-ink-3">
+            Jump to
+          </label>
+          <select
+            value={currentIndex}
+            onChange={handleJump}
+            className="border border-rule bg-paper-2 px-[10px] py-[7px] font-mono text-[12px] text-ink focus:border-ink focus:outline-none"
+          >
+            {ALL_TOPICS.map((t, i) => (
+              <option key={`${t.domainId}:${t.id}`} value={i}>
+                {TIER_LABELS[t.tier]} · {t.domainName} — {t.topic_name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
       {error && (
-        <div className="mb-4 border border-depth-0 p-3 text-[13px]" style={{ backgroundColor: "var(--L0)", color: "var(--L0-ink)" }}>
+        <div
+          className="mb-4 border border-depth-0 p-3 text-[13px]"
+          style={{ backgroundColor: "var(--L0)", color: "var(--L0-ink)" }}
+        >
           {error}
         </div>
       )}
 
-      {/* Step 1: Pick domain */}
-      {step === "pick-domain" && (
-        <div>
-          <p className="mb-6 text-[15px] leading-[1.55] text-ink-2">
-            Choose a domain to assess. Domains are ordered progressively — foundations first.
-          </p>
+      {/* Breadcrumb */}
+      <div className="mb-2 font-mono text-[10.5px] uppercase tracking-[.12em] text-ink-3">
+        {TIER_LABELS[topic.tier]} › {topic.domainName} › {topic.topic_name}
+      </div>
 
-          {tiers.map((tier) => {
-            const tierDomains = DOMAINS
-              .filter((d) => d.tier === tier)
-              .sort((a, b) => a.order - b.order);
-            return (
-              <div key={tier} className="mb-8">
-                <h2 className="mb-3 font-mono text-[10.5px] font-semibold uppercase tracking-[.15em] text-ink-3">
-                  Tier {tier} — {TIER_LABELS[tier]}
-                </h2>
-                <div className="grid gap-[2px] sm:grid-cols-2 lg:grid-cols-3">
-                  {tierDomains.map((domain) => (
-                    <button
-                      key={domain.id}
-                      onClick={() => { setSelectedDomain(domain); setStep("pick-topic"); }}
-                      className="border border-rule bg-paper-2 p-[12px_14px] text-left transition-all hover:border-ink hover:-translate-y-[1px] hover:shadow-[0_3px_0_0_var(--ink)]"
-                    >
-                      <p className="font-display text-[14px] font-bold tracking-[-0.01em]">{domain.domain_name}</p>
-                      <p className="mt-1 font-mono text-[10.5px] text-ink-3">
-                        {domain.leaf_topics.length} topics · {domain.archetype_tags.join(", ")}
-                      </p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Step 2: Pick topic */}
-      {step === "pick-topic" && selectedDomain && (
-        <div>
-          <button
-            onClick={handleStartOver}
-            className="mb-4 font-mono text-[11px] uppercase tracking-[.1em] text-ink-3 hover:text-ink"
-          >
-            ← Back to domains
-          </button>
-          <h2 className="mb-2 font-display text-[20px] font-bold tracking-[-0.015em]">{selectedDomain.domain_name}</h2>
-          <p className="mb-6 text-[14px] text-ink-2">
-            Pick a topic to assess.
-          </p>
-          <div className="grid gap-[2px] sm:grid-cols-2">
-            {selectedDomain.leaf_topics.map((topic) => (
-              <button
-                key={topic.id}
-                onClick={() => handlePickTopic(topic)}
-                className="border border-rule bg-paper-2 p-[12px_14px] text-left font-mono text-[12px] leading-[1.35] transition-all hover:border-ink hover:-translate-y-[1px] hover:shadow-[0_3px_0_0_var(--ink)]"
-              >
-                {topic.topic_name}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Step 3: Loading question */}
+      {/* Loading question */}
       {step === "loading-question" && (
         <div className="flex flex-col items-center py-16">
           <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
           <p className="text-[13px] text-ink-2">
-            Generating probe question for <strong className="font-semibold text-ink">{selectedTopic?.topic_name}</strong>...
+            Generating probe question for{" "}
+            <strong className="font-semibold text-ink">{topic.topic_name}</strong>...
           </p>
         </div>
       )}
 
-      {/* Step 4: Answer the question */}
-      {step === "answer" && selectedTopic && (
+      {/* Answer */}
+      {step === "answer" && (
         <div>
-          <button
-            onClick={() => { setStep("pick-topic"); setQuestion(""); setAnswer(""); }}
-            className="mb-4 font-mono text-[11px] uppercase tracking-[.1em] text-ink-3 hover:text-ink"
-          >
-            ← Back to topics
-          </button>
-          <div className="mb-2 font-mono text-[10.5px] uppercase tracking-[.12em] text-ink-3">
-            {selectedDomain?.domain_name} › {selectedTopic.topic_name}
-          </div>
           <div className="mb-6 border border-ink bg-paper-2 p-[16px]">
             <p className="font-display text-[15px] font-bold leading-[1.4]">{question}</p>
           </div>
@@ -312,33 +311,38 @@ function AssessPageInner() {
             rows={6}
             className="mb-4 w-full border border-rule bg-paper p-[12px] font-body text-[14px] leading-[1.55] text-ink placeholder:text-ink-3 focus:border-ink focus:outline-none"
           />
-          <button
-            onClick={handleSubmitAnswer}
-            disabled={!answer.trim()}
-            className="border border-ink bg-ink px-[18px] py-[10px] font-mono text-[11px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2 disabled:opacity-40"
-          >
-            Submit for Evaluation
-          </button>
+          <div className="flex flex-wrap gap-[8px]">
+            <button
+              onClick={handleSubmitAnswer}
+              disabled={!answer.trim()}
+              className="border border-ink bg-ink px-[18px] py-[10px] font-mono text-[11px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2 disabled:opacity-40"
+            >
+              Submit for Evaluation
+            </button>
+            <button
+              onClick={handleSkip}
+              className="border border-ink bg-paper px-[14px] py-[10px] font-mono text-[11px] uppercase tracking-[.1em] text-ink transition-colors hover:bg-paper-2"
+            >
+              Skip
+            </button>
+          </div>
         </div>
       )}
 
-      {/* Step 5: Submitting */}
+      {/* Submitting */}
       {step === "submitting" && (
         <div className="flex flex-col items-center py-16">
           <div className="mb-4 h-6 w-6 animate-spin border-2 border-rule border-t-ink" />
           <p className="text-[13px] text-ink-2">
-            Evaluating your answer on <strong className="font-semibold text-ink">{selectedTopic?.topic_name}</strong>...
+            Evaluating your answer on{" "}
+            <strong className="font-semibold text-ink">{topic.topic_name}</strong>...
           </p>
         </div>
       )}
 
-      {/* Step 6: Result */}
-      {step === "result" && result && selectedTopic && (
+      {/* Result */}
+      {step === "result" && result && (
         <div>
-          <div className="mb-3 font-mono text-[10.5px] uppercase tracking-[.12em] text-ink-3">
-            {selectedDomain?.domain_name} › {selectedTopic.topic_name}
-          </div>
-
           <div className="mb-6 border border-ink p-[20px]">
             <div className="mb-4 inline-flex items-center gap-[7px] border border-ink px-[10px] py-[5px] font-mono text-[11px] uppercase tracking-[.1em]">
               <span
@@ -351,33 +355,46 @@ function AssessPageInner() {
             </div>
 
             <div className="mb-4 border-t border-rule pt-3">
-              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">Question</h3>
+              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">
+                Question
+              </h3>
               <p className="text-[14px] leading-[1.55]">{question}</p>
             </div>
 
             <div className="mb-4 border-t border-rule pt-3">
-              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">Your answer</h3>
+              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">
+                Your answer
+              </h3>
               <p className="text-[14px] leading-[1.55] text-ink-2">{answer}</p>
             </div>
 
             <div className="border-t border-rule pt-3">
-              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">Judge notes</h3>
+              <h3 className="mb-1 font-mono text-[10px] font-semibold uppercase tracking-[.15em] text-ink-3">
+                Judge notes
+              </h3>
               <p className="text-[14px] leading-[1.55]">{result.judge_notes}</p>
             </div>
           </div>
 
-          <div className="flex gap-[8px]">
+          <div className="flex flex-wrap gap-[8px]">
+            {!isLast ? (
+              <button
+                onClick={goNext}
+                className="border border-ink bg-ink px-[14px] py-[8px] font-mono text-[10px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2"
+              >
+                Next topic →
+              </button>
+            ) : (
+              <span className="font-mono text-[11px] uppercase tracking-[.1em] text-ink-3">
+                End of assessment
+              </span>
+            )}
             <button
-              onClick={handleAssessAnother}
-              className="border border-ink bg-ink px-[14px] py-[8px] font-mono text-[10px] uppercase tracking-[.1em] text-paper transition-colors hover:bg-ink-2"
+              onClick={goPrev}
+              disabled={isFirst}
+              className="border border-ink bg-paper px-[14px] py-[8px] font-mono text-[10px] uppercase tracking-[.1em] text-ink transition-colors hover:bg-paper-2 disabled:opacity-40"
             >
-              Assess another topic
-            </button>
-            <button
-              onClick={handleStartOver}
-              className="border border-ink bg-paper px-[14px] py-[8px] font-mono text-[10px] uppercase tracking-[.1em] text-ink transition-colors hover:bg-paper-2"
-            >
-              Pick a different domain
+              ← Previous
             </button>
           </div>
         </div>

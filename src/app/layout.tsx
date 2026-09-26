@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import TakeAssessmentButton from "./take-assessment-button";
 
 export const metadata: Metadata = {
   title: "SWE Knowledge Heatmap",
@@ -19,13 +20,9 @@ export default function RootLayout({
             <a href="/" className="hover:text-ink">
               SWE Heatmap
             </a>
-            <span className="text-rule">|</span>
-            <a href="/" className="hover:text-ink">
-              Dashboard
-            </a>
-            <a href="/assess" className="hover:text-ink">
-              Take Assessment
-            </a>
+            <span className="ml-auto">
+              <TakeAssessmentButton />
+            </span>
           </nav>
           {children}
         </div>
