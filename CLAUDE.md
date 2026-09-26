@@ -29,8 +29,9 @@ Interactive self-assessment tool for software engineering skills. LLM-judged eva
 - Ollama API key stays server-side only (GCP Secret Manager, mounted on Cloud Run)
 - `NEXT_PUBLIC_*` Firebase vars are passed as Docker build args (not runtime env vars) because Next.js inlines them at build time
 - Auth session persists across page loads via `onAuthStateChanged`
-- 25 domains across 6 progressive tiers, 153 leaf topics, six depth levels: Unaware → Recognize → Explain → Apply → Debug under pressure → Teach
+- 25 domains across 6 progressive tiers, 197 leaf topics, six depth levels: Unaware → Recognize → Explain → Apply → Debug under pressure → Teach
 - Domains ordered by complexity (foundations first, senior/leadership last); cross-cutting domains (Database, API, Security, System Design) split into fundamentals and advanced
+- Topic catalog expanded to concept-level granularity using roadmap.sh (DSA, backend, DevOps) as reference — e.g. DSA split into individual structures/algorithms (linked lists, heaps, BFS/DFS, shortest path, DP), API auth split into authN methods vs authZ models, system design split into monolith/microservices/SOA/serverless/event-driven/service-mesh, DevOps split into IaC/config-mgmt/secret-mgmt/GitOps/cloud
 
 ## File structure
 - `src/app/layout.tsx` — root layout with nav bar (single "SWE Heatmap" link + Take Assessment button)
@@ -46,7 +47,7 @@ Interactive self-assessment tool for software engineering skills. LLM-judged eva
 - `src/lib/firebase-admin.ts` — Firebase Admin SDK init (with ADC fallback for Cloud Run)
 - `src/lib/firebase-client.ts` — Firebase client SDK init
 - `src/lib/ollama.ts` — Ollama Cloud API judge call
-- `src/data/domains.json` — source of truth for all 25 domains and 153 leaf topics (ordered by tier/complexity)
+- `src/data/domains.json` — source of truth for all 25 domains and 197 leaf topics (ordered by tier/complexity)
 - `src/data/domains.ts` — typed wrapper around domains.json
 - `src/data/resources.json` — source of truth for curated learning resources (2 per leaf topic, keyed by topic id)
 - `src/data/resources.ts` — typed wrapper exposing `getResourcesForTopic(id)`

@@ -3,7 +3,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "MDN \u2014 Control flow and error handling",
+      "title": "MDN — Control flow and error handling",
       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
       "source": "MDN"
     },
@@ -26,7 +26,7 @@
     {
       "rank": 2,
       "type": "doc",
-      "title": "Redux \u2014 Immutable Update Patterns",
+      "title": "Redux — Immutable Update Patterns",
       "url": "https://redux.js.org/usage/structuring-reducers/immutable-update-patterns",
       "source": "Redux"
     }
@@ -35,7 +35,7 @@
     {
       "rank": 1,
       "type": "article",
-      "title": "Mostly Adequate Guide \u2014 Pure functions",
+      "title": "Mostly Adequate Guide — Pure functions",
       "url": "https://mostly-adequate.gitbook.io/mostly-adequate-guide/ch03",
       "source": "Mostly Adequate Guide"
     },
@@ -99,7 +99,7 @@
     {
       "rank": 1,
       "type": "video",
-      "title": "The Problem with Time & Timezones \u2014 Computerphile",
+      "title": "The Problem with Time & Timezones — Computerphile",
       "url": "https://www.youtube.com/watch?v=-5wpm-gesOY",
       "source": "Computerphile"
     },
@@ -115,39 +115,23 @@
     {
       "rank": 1,
       "type": "tool",
-      "title": "Regex101 \u2014 interactive regex tester",
+      "title": "Regex101 — interactive regex tester",
       "url": "https://regex101.com/",
       "source": "regex101"
     },
     {
       "rank": 2,
       "type": "tool",
-      "title": "regexr \u2014 learn, build, test regex",
+      "title": "regexr — learn, build, test regex",
       "url": "https://regexr.com/",
       "source": "regexr"
-    }
-  ],
-  "arrays-lists-hashmaps-sets": [
-    {
-      "rank": 1,
-      "type": "doc",
-      "title": "Big-O cheatsheet \u2014 data structure operations",
-      "url": "https://www.bigocheatsheet.com/",
-      "source": "Big-O Cheat Sheet"
-    },
-    {
-      "rank": 2,
-      "type": "course",
-      "title": "Algorithms, Part I (Princeton) \u2014 stacks, queues, unions",
-      "url": "https://www.coursera.org/learn/algorithms-part1",
-      "source": "Princeton / Coursera"
     }
   ],
   "trees-graphs": [
     {
       "rank": 1,
       "type": "article",
-      "title": "VisuAlgo \u2014 tree and graph visualizations",
+      "title": "VisuAlgo — tree and graph visualizations",
       "url": "https://visualgo.net/en",
       "source": "VisuAlgo"
     },
@@ -163,7 +147,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "GeeksforGeeks \u2014 Stack and Queue data structures",
+      "title": "GeeksforGeeks — Stack and Queue data structures",
       "url": "https://www.geeksforgeeks.org/stack-data-structure/",
       "source": "GeeksforGeeks"
     },
@@ -179,7 +163,7 @@
     {
       "rank": 1,
       "type": "video",
-      "title": "Big O Notation \u2014 freeCodeCamp full course",
+      "title": "Big O Notation — freeCodeCamp full course",
       "url": "https://www.youtube.com/watch?v=Mo4vesaut8g",
       "source": "freeCodeCamp"
     },
@@ -191,27 +175,11 @@
       "source": "freeCodeCamp"
     }
   ],
-  "sorting-searching": [
-    {
-      "rank": 1,
-      "type": "video",
-      "title": "Visualizing sorting algorithms",
-      "url": "https://www.youtube.com/watch?v=kPRA0W1kECg",
-      "source": "Timo Bingmann"
-    },
-    {
-      "rank": 2,
-      "type": "article",
-      "title": "Sorting Algorithms Animations (Toptal)",
-      "url": "https://www.toptal.com/developers/sorting-algorithms",
-      "source": "Toptal"
-    }
-  ],
   "space-time-tradeoffs": [
     {
       "rank": 1,
       "type": "article",
-      "title": "Space\u2013time tradeoff",
+      "title": "Space–time tradeoff",
       "url": "https://en.wikipedia.org/wiki/Space%E2%80%93time_tradeoff",
       "source": "Wikipedia"
     },
@@ -307,7 +275,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "Python \u2014 Errors and Exceptions",
+      "title": "Python — Errors and Exceptions",
       "url": "https://docs.python.org/3/tutorial/errors.html",
       "source": "Python.org"
     },
@@ -339,7 +307,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "Python \u2014 typing module documentation",
+      "title": "Python — typing module documentation",
       "url": "https://docs.python.org/3/library/typing.html",
       "source": "Python.org"
     },
@@ -355,7 +323,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "Python \u2014 Modules and Packages",
+      "title": "Python — Modules and Packages",
       "url": "https://docs.python.org/3/tutorial/modules.html",
       "source": "Python.org"
     },
@@ -426,7 +394,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "Git internals \u2014 plumbing and porcelain",
+      "title": "Git internals — plumbing and porcelain",
       "url": "https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain",
       "source": "git-scm"
     }
@@ -474,7 +442,7 @@
     {
       "rank": 2,
       "type": "doc",
-      "title": "Git \u2014 Advanced merging (conflicts)",
+      "title": "Git — Advanced merging (conflicts)",
       "url": "https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging",
       "source": "git-scm"
     }
@@ -554,7 +522,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "Test doubles \u2014 Mocks aren't stubs",
+      "title": "Test doubles — Mocks aren't stubs",
       "url": "https://martinfowler.com/articles/mocksArentStubs.html",
       "source": "Martin Fowler"
     }
@@ -602,7 +570,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "Google \u2014 Flaky tests",
+      "title": "Google — Flaky tests",
       "url": "https://google.github.io/eng-practices/review/developer/flaky-tests.html",
       "source": "Google eng-practices"
     }
@@ -675,14 +643,14 @@
     {
       "rank": 1,
       "type": "tool",
-      "title": "Ruff \u2014 fast Python linter and formatter",
+      "title": "Ruff — fast Python linter and formatter",
       "url": "https://docs.astral.sh/ruff/",
       "source": "Ruff / Astral"
     },
     {
       "rank": 2,
       "type": "tool",
-      "title": "ESLint \u2014 JavaScript linting",
+      "title": "ESLint — JavaScript linting",
       "url": "https://eslint.org/",
       "source": "ESLint"
     }
@@ -851,7 +819,7 @@
     {
       "rank": 1,
       "type": "article",
-      "title": "The Twelve-Factor App \u2014 Config",
+      "title": "The Twelve-Factor App — Config",
       "url": "https://12factor.net/config",
       "source": "12factor.net"
     },
@@ -874,7 +842,7 @@
     {
       "rank": 2,
       "type": "doc",
-      "title": "Linux signals \u2014 man page",
+      "title": "Linux signals — man page",
       "url": "https://man7.org/linux/man-pages/man7/signal.7.html",
       "source": "man7.org"
     }
@@ -931,7 +899,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "MDN \u2014 HTTP response status codes",
+      "title": "MDN — HTTP response status codes",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status",
       "source": "MDN"
     },
@@ -947,14 +915,14 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "MDN \u2014 CORS",
+      "title": "MDN — CORS",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
       "source": "MDN"
     },
     {
       "rank": 2,
       "type": "doc",
-      "title": "MDN \u2014 HTTP cookies",
+      "title": "MDN — HTTP cookies",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies",
       "source": "MDN"
     }
@@ -1011,7 +979,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "MDN \u2014 WebSockets API",
+      "title": "MDN — WebSockets API",
       "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
       "source": "MDN"
     },
@@ -1034,7 +1002,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "MDN \u2014 Critical rendering path",
+      "title": "MDN — Critical rendering path",
       "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path",
       "source": "MDN"
     }
@@ -1050,7 +1018,7 @@
     {
       "rank": 2,
       "type": "doc",
-      "title": "MDN \u2014 Event loop",
+      "title": "MDN — Event loop",
       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop",
       "source": "MDN"
     }
@@ -1059,7 +1027,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "React \u2014 Managing state",
+      "title": "React — Managing state",
       "url": "https://react.dev/learn/managing-state",
       "source": "React"
     },
@@ -1130,7 +1098,7 @@
     {
       "rank": 2,
       "type": "doc",
-      "title": "Vite \u2014 why and how",
+      "title": "Vite — why and how",
       "url": "https://vitejs.dev/guide/why.html",
       "source": "Vite"
     }
@@ -1155,7 +1123,7 @@
     {
       "rank": 1,
       "type": "course",
-      "title": "MDN \u2014 Accessibility guide",
+      "title": "MDN — Accessibility guide",
       "url": "https://developer.mozilla.org/en-US/docs/Learn/Accessibility",
       "source": "MDN"
     },
@@ -1203,14 +1171,14 @@
     {
       "rank": 1,
       "type": "tool",
-      "title": "SQLBolt \u2014 interactive SQL lessons",
+      "title": "SQLBolt — interactive SQL lessons",
       "url": "https://sqlbolt.com/",
       "source": "SQLBolt"
     },
     {
       "rank": 2,
       "type": "course",
-      "title": "Mode \u2014 SQL tutorial",
+      "title": "Mode — SQL tutorial",
       "url": "https://mode.com/sql-tutorial/",
       "source": "Mode"
     }
@@ -1226,7 +1194,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "PostgreSQL \u2014 EXPLAIN explained",
+      "title": "PostgreSQL — EXPLAIN explained",
       "url": "https://www.postgresql.org/docs/current/using-explain.html",
       "source": "PostgreSQL"
     }
@@ -1309,22 +1277,6 @@
       "title": "Idempotent REST APIs",
       "url": "https://www.restapitutorial.com/lessons/idempotency.html",
       "source": "REST API Tutorial"
-    }
-  ],
-  "authn-authz": [
-    {
-      "rank": 1,
-      "type": "article",
-      "title": "OAuth 2.0 simplified",
-      "url": "https://aaronparecki.com/oauth-2-simplified/",
-      "source": "Aaron Parecki"
-    },
-    {
-      "rank": 2,
-      "type": "article",
-      "title": "JWT vs sessions vs API keys",
-      "url": "https://supertokens.com/blog/all-you-need-to-know-about-user-session-security",
-      "source": "SuperTokens"
     }
   ],
   "graphql-grpc-tradeoffs": [
@@ -1434,7 +1386,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "TLS 1.3 \u2014 A walkthrough",
+      "title": "TLS 1.3 — A walkthrough",
       "url": "https://blog.cloudflare.com/rfc-8446-aka-tls-1-3/",
       "source": "Cloudflare"
     }
@@ -1469,22 +1421,6 @@
       "title": "Stateless vs stateful services",
       "url": "https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless",
       "source": "Red Hat"
-    }
-  ],
-  "architecture-styles": [
-    {
-      "rank": 1,
-      "type": "article",
-      "title": "Architecture styles overview",
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/",
-      "source": "Microsoft"
-    },
-    {
-      "rank": 2,
-      "type": "article",
-      "title": "Microservices vs monolith (Fowler)",
-      "url": "https://martinfowler.com/articles/microservices.html",
-      "source": "Martin Fowler"
     }
   ],
   "coupling-cohesion": [
@@ -1555,7 +1491,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "Docker \u2014 Get started",
+      "title": "Docker — Get started",
       "url": "https://docs.docker.com/get-started/",
       "source": "Docker"
     },
@@ -1565,22 +1501,6 @@
       "title": "Dockerfile best practices",
       "url": "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/",
       "source": "Docker"
-    }
-  ],
-  "orchestration-concepts": [
-    {
-      "rank": 1,
-      "type": "doc",
-      "title": "Kubernetes concepts",
-      "url": "https://kubernetes.io/docs/concepts/",
-      "source": "Kubernetes"
-    },
-    {
-      "rank": 2,
-      "type": "article",
-      "title": "Kubernetes: pods, services, deployments",
-      "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
-      "source": "Kubernetes"
     }
   ],
   "infrastructure-as-code": [
@@ -1596,22 +1516,6 @@
       "type": "doc",
       "title": "Terraform introduction",
       "url": "https://developer.hashicorp.com/terraform/intro",
-      "source": "HashiCorp"
-    }
-  ],
-  "config-secrets-management": [
-    {
-      "rank": 1,
-      "type": "article",
-      "title": "The Twelve-Factor App \u2014 Config",
-      "url": "https://12factor.net/config",
-      "source": "12factor.net"
-    },
-    {
-      "rank": 2,
-      "type": "article",
-      "title": "Vault \u2014 secrets management",
-      "url": "https://developer.hashicorp.com/vault/docs/what-is-vault",
       "source": "HashiCorp"
     }
   ],
@@ -1651,7 +1555,7 @@
     {
       "rank": 1,
       "type": "article",
-      "title": "Structured logging \u2014 the why and how",
+      "title": "Structured logging — the why and how",
       "url": "https://www.baeldung.com/structured-logging",
       "source": "Baeldung"
     },
@@ -1667,14 +1571,14 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "Prometheus \u2014 documentation",
+      "title": "Prometheus — documentation",
       "url": "https://prometheus.io/docs/introduction/overview/",
       "source": "Prometheus"
     },
     {
       "rank": 2,
       "type": "doc",
-      "title": "Grafana \u2014 dashboards",
+      "title": "Grafana — dashboards",
       "url": "https://grafana.com/docs/grafana/latest/dashboards/",
       "source": "Grafana"
     }
@@ -1683,7 +1587,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "OpenTelemetry \u2014 tracing concepts",
+      "title": "OpenTelemetry — tracing concepts",
       "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
       "source": "OpenTelemetry"
     },
@@ -1715,7 +1619,7 @@
     {
       "rank": 1,
       "type": "book",
-      "title": "Site Reliability Engineering \u2014 SLOs",
+      "title": "Site Reliability Engineering — SLOs",
       "url": "https://sre.google/sre-book/service-level-objectives/",
       "source": "Google SRE"
     },
@@ -1770,7 +1674,7 @@
     {
       "rank": 2,
       "type": "article",
-      "title": "Brendan Gregg \u2014 performance analysis methodology",
+      "title": "Brendan Gregg — performance analysis methodology",
       "url": "https://www.brendangregg.com/methodology.html",
       "source": "Brendan Gregg"
     }
@@ -1779,7 +1683,7 @@
     {
       "rank": 1,
       "type": "doc",
-      "title": "Redis \u2014 documentation",
+      "title": "Redis — documentation",
       "url": "https://redis.io/docs/latest/",
       "source": "Redis"
     },
@@ -1850,7 +1754,7 @@
     {
       "rank": 2,
       "type": "doc",
-      "title": "Apache Kafka \u2014 introduction",
+      "title": "Apache Kafka — introduction",
       "url": "https://kafka.apache.org/intro",
       "source": "Apache Kafka"
     }
@@ -2067,7 +1971,7 @@
     {
       "rank": 1,
       "type": "article",
-      "title": "Brendan Gregg \u2014 Linux performance analysis",
+      "title": "Brendan Gregg — Linux performance analysis",
       "url": "https://www.brendangregg.com/linuxperf.html",
       "source": "Brendan Gregg"
     },
@@ -2099,14 +2003,14 @@
     {
       "rank": 1,
       "type": "tool",
-      "title": "k6 \u2014 load testing tool",
+      "title": "k6 — load testing tool",
       "url": "https://k6.io/docs/",
       "source": "k6"
     },
     {
       "rank": 2,
       "type": "tool",
-      "title": "Artillery \u2014 load testing",
+      "title": "Artillery — load testing",
       "url": "https://www.artillery.io/docs",
       "source": "Artillery"
     }
@@ -2445,6 +2349,806 @@
       "title": "Managing risk in software",
       "url": "https://martinfowler.com/bliki/",
       "source": "Martin Fowler"
+    }
+  ],
+  "arrays-dynamic-arrays": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Arrays and dynamic arrays",
+      "url": "https://www.geeksforgeeks.org/array-data-structure/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Dynamic arrays — freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=GcJkXvqDn7M",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "linked-lists": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Linked list data structure",
+      "url": "https://www.geeksforgeeks.org/data-structures/linked-list/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Linked lists — CS50",
+      "url": "https://www.youtube.com/watch?v=zS6pW9tT1f4",
+      "source": "CS50"
+    }
+  ],
+  "hash-tables-maps": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Hash table data structure",
+      "url": "https://www.geeksforgeeks.org/hash-table-data-structure/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Hash tables explained",
+      "url": "https://www.youtube.com/watch?v=knV86FlSXJ8",
+      "source": "HackerRank"
+    }
+  ],
+  "sets-maps": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Sets and maps in Python",
+      "url": "https://realpython.com/python-sets/",
+      "source": "Real Python"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Set and map abstract data types",
+      "url": "https://www.geeksforgeeks.org/set-in-python/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "heaps-priority-queues": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Heap data structure",
+      "url": "https://www.geeksforgeeks.org/heap-data-structure/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Heaps and priority queues",
+      "url": "https://www.youtube.com/watch?v=t0Cq6tVNRBA",
+      "source": "HackerRank"
+    }
+  ],
+  "binary-trees-bst": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Binary search tree",
+      "url": "https://www.geeksforgeeks.org/binary-search-tree-data-structure/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Binary trees (VisuAlgo)",
+      "url": "https://visualgo.net/en/bst",
+      "source": "VisuAlgo"
+    }
+  ],
+  "balanced-trees": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "AVL trees",
+      "url": "https://www.geeksforgeeks.org/avl-tree-set-1-insertion/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Red-black trees",
+      "url": "https://www.geeksforgeeks.org/introduction-to-red-black-tree/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "tries": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Trie data structure",
+      "url": "https://www.geeksforgeeks.org/trie-insert-and-search/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Tries explained",
+      "url": "https://www.youtube.com/watch?v=AXjmTQ8LEoI",
+      "source": "Tushar Roy"
+    }
+  ],
+  "tree-traversals": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Tree traversal (inorder, preorder, postorder)",
+      "url": "https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Tree traversals (VisuAlgo)",
+      "url": "https://visualgo.net/en/bst",
+      "source": "VisuAlgo"
+    }
+  ],
+  "graph-traversal-bfs-dfs": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "BFS and DFS",
+      "url": "https://www.geeksforgeeks.org/difference-between-bfs-and-dfs/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "BFS and DFS — freeCodeCamp",
+      "url": "https://www.youtube.com/watch?v=pcKY4hjDrxk",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "shortest-path": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Dijkstra's shortest path algorithm",
+      "url": "https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Bellman-Ford algorithm",
+      "url": "https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "minimum-spanning-tree": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Prim's algorithm",
+      "url": "https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Kruskal's algorithm",
+      "url": "https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "union-find": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Union-find (disjoint set)",
+      "url": "https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "course",
+      "title": "Algorithms Part I — Union-Find (Princeton)",
+      "url": "https://www.coursera.org/learn/algorithms-part1",
+      "source": "Princeton / Coursera"
+    }
+  ],
+  "segment-fenwick-trees": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Segment tree",
+      "url": "https://cp-algorithms.com/data_structures/segment_tree.html",
+      "source": "CP-Algorithms"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Fenwick (Binary Indexed) tree",
+      "url": "https://cp-algorithms.com/data_structures/fenwick.html",
+      "source": "CP-Algorithms"
+    }
+  ],
+  "skip-lists": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Skip list data structure",
+      "url": "https://www.geeksforgeeks.org/skip-list/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Skip lists explained",
+      "url": "https://en.wikipedia.org/wiki/Skip_list",
+      "source": "Wikipedia"
+    }
+  ],
+  "asymptotic-notation": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Big-O, Big-θ, Big-Ω notation",
+      "url": "https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/",
+      "source": "freeCodeCamp"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Asymptotic notation — CS50",
+      "url": "https://www.youtube.com/watch?v=2HkY3mGZ1Y8",
+      "source": "CS50"
+    }
+  ],
+  "common-runtimes": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Common algorithm runtimes",
+      "url": "https://www.bigocheatsheet.com/",
+      "source": "Big-O Cheat Sheet"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Big-O complexities cheat sheet",
+      "url": "https://www.geeksforgeeks.org/analysis-of-algorithms-set-4-analysis-of-loops/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "sorting-algorithms": [
+    {
+      "rank": 1,
+      "type": "video",
+      "title": "Sorting algorithms visualized",
+      "url": "https://www.youtube.com/watch?v=kPRA0W1kECg",
+      "source": "Timo Bingmann"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Sorting algorithms animations",
+      "url": "https://www.toptal.com/developers/sorting-algorithms",
+      "source": "Toptal"
+    }
+  ],
+  "binary-search": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Binary search algorithm",
+      "url": "https://www.geeksforgeeks.org/binary-search/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Binary search — when it breaks",
+      "url": "https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html",
+      "source": "Google Research"
+    }
+  ],
+  "recursion-divide-conquer": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Divide and conquer algorithm",
+      "url": "https://www.geeksforgeeks.org/divide-and-conquer/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Recursion — CS50",
+      "url": "https://www.youtube.com/watch?v=mz6tAJMVmfM",
+      "source": "CS50"
+    }
+  ],
+  "dynamic-programming": [
+    {
+      "rank": 1,
+      "type": "course",
+      "title": "Dynamic Programming (freeCodeCamp)",
+      "url": "https://www.freecodecamp.org/news/learn-dynamic-programming/",
+      "source": "freeCodeCamp"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Dynamic programming explained",
+      "url": "https://www.youtube.com/watch?v=oBt53YbR9Kk",
+      "source": "freeCodeCamp"
+    }
+  ],
+  "greedy-algorithms": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Greedy algorithms",
+      "url": "https://www.geeksforgeeks.org/greedy-algorithms/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Greedy algorithm design",
+      "url": "https://www.programiz.com/dsa/greedy-algorithm",
+      "source": "Programiz"
+    }
+  ],
+  "backtracking": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Backtracking algorithms",
+      "url": "https://www.geeksforgeeks.org/backtracking-algorithms/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "video",
+      "title": "Backtracking — N-Queens",
+      "url": "https://www.youtube.com/watch?v=xFv_Hl4B83A",
+      "source": "Abdul Bari"
+    }
+  ],
+  "two-pointer-sliding-window": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Two pointer technique",
+      "url": "https://www.geeksforgeeks.org/two-pointers-technique/",
+      "source": "GeeksforGeeks"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Sliding window technique",
+      "url": "https://www.geeksforgeeks.org/window-sliding-technique/",
+      "source": "GeeksforGeeks"
+    }
+  ],
+  "api-documentation-openapi": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "OpenAPI Specification",
+      "url": "https://spec.openapis.org/oas/latest.html",
+      "source": "OpenAPI"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Swagger documentation",
+      "url": "https://swagger.io/docs/specification/about/",
+      "source": "Swagger"
+    }
+  ],
+  "authentication-methods": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "JWT, OAuth2, sessions, API keys compared",
+      "url": "https://supertokens.com/blog/all-you-need-to-know-about-user-session-security",
+      "source": "SuperTokens"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Authentication vs authorization",
+      "url": "https://auth0.com/docs/get-started/authentication-and-authorization",
+      "source": "Auth0"
+    }
+  ],
+  "authorization-models": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "RBAC vs ABAC vs ReBAC",
+      "url": "https://www.permit.io/blog/rbac-vs-abac-vs-rebac",
+      "source": "Permit.io"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "OAuth 2.0 scopes",
+      "url": "https://oauth.net/2/scope/",
+      "source": "oauth.net"
+    }
+  ],
+  "api-gateways": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "API gateway pattern",
+      "url": "https://microservices.io/patterns/apigateway.html",
+      "source": "microservices.io"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "What is an API gateway?",
+      "url": "https://www.nginx.com/learn/api-gateway/",
+      "source": "nginx"
+    }
+  ],
+  "password-hashing": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Password hashing (bcrypt, scrypt, Argon2)",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "source": "OWASP"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "How to safely store passwords",
+      "url": "https://codahale.com/how-to-safely-store-a-password/",
+      "source": "Coda Hale"
+    }
+  ],
+  "osi-model-protocols": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "OSI model explained",
+      "url": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+      "source": "Cloudflare"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "The OSI model — 7 layers",
+      "url": "https://www.imperva.com/learn/application-security/osi-model/",
+      "source": "Imperva"
+    }
+  ],
+  "reverse-vs-forward-proxy": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Reverse proxy vs forward proxy",
+      "url": "https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/",
+      "source": "Cloudflare"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Forward proxy vs reverse proxy",
+      "url": "https://oxylabs.io/blog/reverse-proxy-vs-forward-proxy",
+      "source": "Oxylabs"
+    }
+  ],
+  "web-servers": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Nginx vs Apache",
+      "url": "https://www.digitalocean.com/community/tutorials/apache-vs-nginx-practical-considerations",
+      "source": "DigitalOcean"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Nginx documentation",
+      "url": "https://nginx.org/en/docs/",
+      "source": "nginx"
+    }
+  ],
+  "orms-data-access": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "What is an ORM?",
+      "url": "https://www.prisma.io/dataguide/types/relational/what-is-an-orm",
+      "source": "Prisma Data Guide"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "ORMs and their tradeoffs",
+      "url": "https://blog.logrocket.com/why-you-should-avoid-orms/",
+      "source": "LogRocket"
+    }
+  ],
+  "database-migrations": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Database migrations explained",
+      "url": "https://www.prisma.io/dataguide/types/relational/what-are-database-migrations",
+      "source": "Prisma Data Guide"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Versioned migrations (Flyway)",
+      "url": "https://flywaydb.org/documentation/concepts/migrations",
+      "source": "Flyway"
+    }
+  ],
+  "search-engines": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Elasticsearch basics",
+      "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html",
+      "source": "Elastic"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Full-text search with Solr",
+      "url": "https://solr.apache.org/guide/",
+      "source": "Apache Solr"
+    }
+  ],
+  "monolithic-architecture": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Monolithic architecture",
+      "url": "https://microservices.io/patterns/monolithic.html",
+      "source": "microservices.io"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Microservices vs monolith (Fowler)",
+      "url": "https://martinfowler.com/articles/microservices.html",
+      "source": "Martin Fowler"
+    }
+  ],
+  "microservices-architecture": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Microservices (Fowler)",
+      "url": "https://martinfowler.com/articles/microservices.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Microservice patterns",
+      "url": "https://microservices.io/patterns/index.html",
+      "source": "microservices.io"
+    }
+  ],
+  "service-oriented-architecture": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "SOA vs microservices",
+      "url": "https://www.ibm.com/topics/soa",
+      "source": "IBM"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Service-oriented architecture",
+      "url": "https://en.wikipedia.org/wiki/Service-oriented_architecture",
+      "source": "Wikipedia"
+    }
+  ],
+  "serverless-architecture": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Serverless architectures (Fowler)",
+      "url": "https://martinfowler.com/articles/serverless.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "What is serverless?",
+      "url": "https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless",
+      "source": "Red Hat"
+    }
+  ],
+  "event-driven-architecture": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Event-driven architecture patterns",
+      "url": "https://martinfowler.com/articles/201701-event-driven.html",
+      "source": "Martin Fowler"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "What is event-driven architecture?",
+      "url": "https://aws.amazon.com/event-driven-architecture/",
+      "source": "AWS"
+    }
+  ],
+  "service-mesh": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Service mesh explained",
+      "url": "https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh",
+      "source": "Red Hat"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Istio service mesh",
+      "url": "https://istio.io/latest/about/service-mesh/",
+      "source": "Istio"
+    }
+  ],
+  "twelve-factor-app": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "The Twelve-Factor App",
+      "url": "https://12factor.net/",
+      "source": "12factor.net"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Twelve-factor app methodology",
+      "url": "https://www.redhat.com/en/topics/cloud-native-apps/what-is-the-twelve-factor-app",
+      "source": "Red Hat"
+    }
+  ],
+  "ci-cd-tools": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Jenkins vs GitLab CI vs CircleCI",
+      "url": "https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd",
+      "source": "Atlassian"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Jenkins user documentation",
+      "url": "https://www.jenkins.io/doc/",
+      "source": "Jenkins"
+    }
+  ],
+  "container-orchestration": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "Kubernetes concepts",
+      "url": "https://kubernetes.io/docs/concepts/",
+      "source": "Kubernetes"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Kubernetes vs Docker Swarm",
+      "url": "https://www.redhat.com/en/topics/containers/kubernetes-vs-docker-swarm",
+      "source": "Red Hat"
+    }
+  ],
+  "configuration-management": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Ansible vs Chef vs Puppet",
+      "url": "https://www.redhat.com/en/topics/automation/ansible-vs-puppet-vs-chef",
+      "source": "Red Hat"
+    },
+    {
+      "rank": 2,
+      "type": "doc",
+      "title": "Ansible getting started",
+      "url": "https://docs.ansible.com/ansible/latest/getting_started/index.html",
+      "source": "Ansible"
+    }
+  ],
+  "secret-management-tools": [
+    {
+      "rank": 1,
+      "type": "doc",
+      "title": "HashiCorp Vault",
+      "url": "https://developer.hashicorp.com/vault/docs",
+      "source": "HashiCorp"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Kubernetes sealed secrets",
+      "url": "https://github.com/bitnami-labs/sealed-secrets",
+      "source": "Bitnami"
+    }
+  ],
+  "cloud-providers": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "AWS vs Azure vs GCP",
+      "url": "https://www.cloudzero.com/blog/aws-vs-azure-vs-gcp",
+      "source": "CloudZero"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Cloud service models (IaaS/PaaS/SaaS)",
+      "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-iaas/",
+      "source": "Microsoft"
+    }
+  ],
+  "gitops": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "GitOps principles",
+      "url": "https://www.gitops.tech/",
+      "source": "gitops.tech"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "ArgoCD vs FluxCD",
+      "url": "https://www.redhat.com/en/topics/devops/what-is-gitops",
+      "source": "Red Hat"
+    }
+  ],
+  "log-aggregation": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "ELK stack (Elasticsearch, Logstash, Kibana)",
+      "url": "https://www.elastic.co/guide/en/elastic-stack/current/overview.html",
+      "source": "Elastic"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "Centralized logging",
+      "url": "https://www.datadoghq.com/knowledge-center/log-management/",
+      "source": "Datadog"
+    }
+  ],
+  "apm-tools": [
+    {
+      "rank": 1,
+      "type": "article",
+      "title": "Application performance monitoring",
+      "url": "https://www.dynatrace.com/news/blog/what-is-apm/",
+      "source": "Dynatrace"
+    },
+    {
+      "rank": 2,
+      "type": "article",
+      "title": "New Relic APM",
+      "url": "https://docs.newrelic.com/docs/apm/",
+      "source": "New Relic"
     }
   ]
 }
