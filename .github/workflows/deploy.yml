@@ -33,7 +33,11 @@ jobs:
       - name: Build and push
         run: |
           IMAGE=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/swe-heatmap/${{ env.SERVICE }}:${{ github.sha }}
-          docker build -t $IMAGE .
+          docker build \
+            --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }} \
+            --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }} \
+            --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }} \
+            -t $IMAGE .
           docker push $IMAGE
 
       - name: Deploy to Cloud Run
@@ -45,4 +49,4 @@ jobs:
             --platform managed \
             --allow-unauthenticated \
             --set-secrets=OLLAMA_CLOUD_API_KEY=ollama-cloud-api-key:latest \
-            --set-env-vars="NEXT_PUBLIC_FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }},NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }},NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }},OLLAMA_CLOUD_API_URL=${{ secrets.OLLAMA_CLOUD_API_URL }}"
+            --set-env-vars="OLLAMA_CLOUD_API_URL=${{ secrets.OLLAMA_CLOUD_API_URL }}"
