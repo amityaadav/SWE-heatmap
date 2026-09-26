@@ -32,9 +32,16 @@ export default function AssessPage() {
   const [result, setResult] = useState<JudgeResult | null>(null);
   const [error, setError] = useState("");
 
+  const [authLoading, setAuthLoading] = useState(true);
+
   useEffect(() => {
-    import("@/lib/firebase-client").then((mod) => {
+    import("@/lib/firebase-client").then(async (mod) => {
       setFirebaseAuth(mod.auth);
+      const { onAuthStateChanged } = await import("firebase/auth");
+      onAuthStateChanged(mod.auth, (u) => {
+        setUser(u);
+        setAuthLoading(false);
+      });
     });
   }, []);
 
@@ -132,6 +139,15 @@ export default function AssessPage() {
     setResult(null);
     setError("");
     setStep("pick-topic");
+  }
+
+  if (authLoading) {
+    return (
+      <div className="flex flex-col items-center py-12">
+        <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-200 border-t-blue-600" />
+        <p className="text-[var(--text-secondary)]">Loading...</p>
+      </div>
+    );
   }
 
   if (!user) {
